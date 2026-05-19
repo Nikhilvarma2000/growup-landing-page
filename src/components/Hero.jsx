@@ -584,14 +584,58 @@ export default function Hero() {
 
               </div>
 
+              {/* FORM TITLE */}
+
+              <div
+                className="
+                  mt-7
+                  mb-5
+
+                  text-center
+                "
+              >
+
+                <h4
+                  className="
+                    text-xl
+                    sm:text-2xl
+
+                    font-bold
+
+                    text-gray-900
+                  "
+                  style={{
+                    letterSpacing:"-0.03em",
+                  }}
+                >
+
+                  Fill The Form For More Details
+
+                </h4>
+
+                <p
+                  className="
+                    text-gray-500
+
+                    text-sm
+                    sm:text-base
+
+                    mt-2
+                  "
+                >
+
+                  Our team will contact you shortly 🚀
+
+                </p>
+
+              </div>
+
               {/* FORM */}
 
               <form
                 onSubmit={handleSubmit}
 
                 className="
-                  mt-6
-
                   space-y-4
                 "
               >
