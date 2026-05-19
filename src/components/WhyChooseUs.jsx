@@ -3,19 +3,17 @@ import {
   FaBullseye,
   FaUsers,
   FaChartLine,
-  FaArrowRight
 } from "react-icons/fa"
 
 import { motion } from "framer-motion"
 
 const features = [
-
   {
     icon: <FaRocket />,
     title: "Fast Business Growth",
     description:
       "We help businesses scale rapidly using smart digital strategies.",
-    gradient: "from-violet-500 to-indigo-600"
+    gradient: "from-violet-500 to-indigo-600",
   },
 
   {
@@ -23,7 +21,7 @@ const features = [
     title: "Targeted Marketing",
     description:
       "Reach the right customers with optimized ad campaigns.",
-    gradient: "from-emerald-500 to-teal-600"
+    gradient: "from-emerald-500 to-teal-600",
   },
 
   {
@@ -31,7 +29,7 @@ const features = [
     title: "Lead Generation",
     description:
       "Generate high-quality leads that convert into customers.",
-    gradient: "from-sky-500 to-cyan-500"
+    gradient: "from-sky-500 to-cyan-500",
   },
 
   {
@@ -39,9 +37,8 @@ const features = [
     title: "Affordable Solutions",
     description:
       "Premium marketing solutions at budget-friendly pricing.",
-    gradient: "from-orange-500 to-amber-500"
-  }
-
+    gradient: "from-orange-500 to-amber-500",
+  },
 ]
 
 function WhyChooseUs() {
@@ -52,59 +49,88 @@ function WhyChooseUs() {
       className="
         relative
         overflow-hidden
-        py-32
-        px-5
+
+        py-20
+        sm:py-24
+        lg:py-32
+
+        px-4
         sm:px-6
       "
       style={{
         background:
-          "linear-gradient(180deg,#f8fafc 0%,#ffffff 50%,#f5f3ff 100%)"
+          "linear-gradient(180deg,#f8fafc 0%,#ffffff 50%,#f5f3ff 100%)",
       }}
     >
 
-      {/* BACKGROUND BLURS */}
+      {/* BLUR BG */}
 
       <div
         className="
           absolute
-          top-[-180px]
+          top-[-120px]
           left-[-120px]
-          w-[420px]
-          h-[420px]
+
+          w-[280px]
+          sm:w-[420px]
+
+          h-[280px]
+          sm:h-[420px]
+
           rounded-full
           blur-3xl
           opacity-20
         "
         style={{
           background:
-            "linear-gradient(135deg,#8b5cf6,#6366f1)"
+            "linear-gradient(135deg,#8b5cf6,#6366f1)",
         }}
       />
 
       <div
         className="
           absolute
-          bottom-[-180px]
+          bottom-[-120px]
           right-[-120px]
-          w-[420px]
-          h-[420px]
+
+          w-[280px]
+          sm:w-[420px]
+
+          h-[280px]
+          sm:h-[420px]
+
           rounded-full
           blur-3xl
           opacity-20
         "
         style={{
           background:
-            "linear-gradient(135deg,#06b6d4,#3b82f6)"
+            "linear-gradient(135deg,#06b6d4,#3b82f6)",
         }}
       />
 
       {/* CONTAINER */}
 
-      <div className="relative z-10 max-w-[1450px] mx-auto">
+      <div
+        className="
+          relative
+          z-10
 
-        {/* TOP SECTION */}
+          max-w-[1450px]
+          mx-auto
+        "
+      >
 
-        <div className="text-center mb-24">
+        {/* TOP */}
+
+        <div
+          className="
+            text-center
+
+            mb-14
+            sm:mb-20
+          "
+        >
 
           {/* BADGE */}
 
@@ -113,20 +139,27 @@ function WhyChooseUs() {
               inline-flex
               items-center
               gap-3
-              px-6
+
+              px-5
+              sm:px-6
+
               py-3
+
               rounded-full
-              text-sm
+
+              text-xs
+              sm:text-sm
+
               font-semibold
-              mb-8
+
+              mb-6
+              sm:mb-8
             "
             style={{
               background:
                 "linear-gradient(135deg,#dcfce7,#d1fae5)",
               color:"#15803d",
               border:"1px solid #86efac",
-              boxShadow:
-                "0 8px 24px rgba(34,197,94,0.10)"
             }}
           >
 
@@ -147,41 +180,56 @@ function WhyChooseUs() {
 
           <h2
             className="
-              text-5xl
-              md:text-6xl
-              font-bold
-              leading-tight
+              text-[2.3rem]
+              sm:text-5xl
+              lg:text-6xl
+
+              font-black
+
+              leading-[1.05]
+
+              text-gray-900
             "
             style={{
-              color:"#111827",
-              letterSpacing:"-0.05em"
+              letterSpacing:"-0.05em",
             }}
           >
 
             Why Businesses
-            <br />
 
             <span
+              className="
+                block
+                mt-2
+              "
               style={{
                 background:
                   "linear-gradient(90deg,#22c55e,#06b6d4)",
                 WebkitBackgroundClip:"text",
-                WebkitTextFillColor:"transparent"
+                WebkitTextFillColor:"transparent",
               }}
             >
+
               Trust Growup
+
             </span>
 
           </h2>
 
-          {/* SUBTEXT */}
+          {/* TEXT */}
 
           <p
             className="
               text-gray-500
-              mt-8
-              text-lg
-              leading-9
+
+              mt-6
+              sm:mt-8
+
+              text-[15px]
+              sm:text-lg
+
+              leading-8
+
               max-w-3xl
               mx-auto
             "
@@ -196,14 +244,18 @@ function WhyChooseUs() {
 
         </div>
 
-        {/* FEATURE GRID */}
+        {/* FEATURES */}
 
         <div
           className="
             grid
+
+            grid-cols-1
             sm:grid-cols-2
             xl:grid-cols-4
-            gap-8
+
+            gap-5
+            sm:gap-7
           "
         >
 
@@ -214,63 +266,62 @@ function WhyChooseUs() {
 
               initial={{
                 opacity:0,
-                y:40
+                y:30,
               }}
 
               whileInView={{
                 opacity:1,
-                y:0
+                y:0,
               }}
 
               transition={{
-                duration:0.5,
-                delay:index * 0.08
+                duration:0.45,
+                delay:index * 0.08,
               }}
 
               viewport={{ once:true }}
 
               whileHover={{
-                y:-10
+                y:-6,
               }}
 
               className="
-                group
                 relative
                 overflow-hidden
-                rounded-[34px]
-                p-9
+
+                rounded-[28px]
+                sm:rounded-[34px]
+
+                p-6
+                sm:p-8
+
                 border
                 border-black/[0.05]
-                bg-white/70
+
+                bg-white/80
+
                 backdrop-blur-xl
               "
 
               style={{
                 boxShadow:
-                  "0 20px 50px rgba(0,0,0,0.05)"
+                  "0 15px 40px rgba(0,0,0,0.05)",
               }}
             >
 
-              {/* CARD GLOW */}
+              {/* GLOW */}
 
               <div
                 className={`
                   absolute
                   inset-0
-                  opacity-0
-                  group-hover:opacity-100
-                  transition-all
-                  duration-500
+
+                  opacity-10
+
                   bg-gradient-to-br
                   ${item.gradient}
                 `}
-                style={{
-                  filter:"blur(120px)",
-                  transform:"scale(1.2)"
-                }}
               />
-
-              {/* CONTENT */}
 
               <div className="relative z-10">
 
@@ -278,9 +329,14 @@ function WhyChooseUs() {
 
                 <div
                   className={`
-                    w-20
-                    h-20
-                    rounded-[26px]
+                    w-16
+                    h-16
+
+                    sm:w-20
+                    sm:h-20
+
+                    rounded-[22px]
+
                     bg-gradient-to-br
                     ${item.gradient}
 
@@ -290,12 +346,16 @@ function WhyChooseUs() {
                     items-center
                     justify-center
 
-                    text-3xl
+                    text-2xl
+                    sm:text-3xl
 
-                    shadow-xl
-
-                    mb-10
+                    mb-6
+                    sm:mb-8
                   `}
+                  style={{
+                    boxShadow:
+                      "0 16px 35px rgba(0,0,0,0.12)",
+                  }}
                 >
 
                   {item.icon}
@@ -306,57 +366,41 @@ function WhyChooseUs() {
 
                 <h3
                   className="
-                    text-2xl
+                    text-xl
+                    sm:text-2xl
+
                     font-bold
+
                     leading-snug
+
                     text-gray-900
                   "
-                  style={{
-                    letterSpacing:"-0.03em"
-                  }}
                 >
 
                   {item.title}
 
                 </h3>
 
-                {/* DESCRIPTION */}
+                {/* DESC */}
 
                 <p
                   className="
                     text-gray-500
-                    leading-8
-                    text-[15px]
-                    mt-6
+
+                    leading-7
+                    sm:leading-8
+
+                    text-sm
+                    sm:text-[15px]
+
+                    mt-4
+                    sm:mt-5
                   "
                 >
 
                   {item.description}
 
                 </p>
-
-                {/* BOTTOM */}
-
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-3
-                    mt-8
-                    font-semibold
-                    text-sm
-                    text-gray-900
-                    transition-all
-                    duration-300
-                    group-hover:translate-x-1
-                  "
-                >
-
-                  Learn More
-
-                  <FaArrowRight className="text-xs" />
-
-                </div>
 
               </div>
 
@@ -366,22 +410,31 @@ function WhyChooseUs() {
 
         </div>
 
-        {/* BOTTOM TRUST SECTION */}
+        {/* BOTTOM SECTION */}
 
         <div
           className="
-            mt-20
-            rounded-[36px]
+            mt-14
+            sm:mt-20
+
+            rounded-[30px]
+            sm:rounded-[36px]
+
             border
             border-black/[0.05]
-            bg-white/70
+
+            bg-white/80
+
             backdrop-blur-xl
-            p-10
-            md:p-14
+
+            p-6
+            sm:p-10
+            lg:p-14
           "
+
           style={{
             boxShadow:
-              "0 24px 60px rgba(0,0,0,0.05)"
+              "0 24px 60px rgba(0,0,0,0.05)",
           }}
         >
 
@@ -389,26 +442,34 @@ function WhyChooseUs() {
             className="
               flex
               flex-col
-              lg:flex-row
-              items-center
+              xl:flex-row
+
+              items-start
+              xl:items-center
+
               justify-between
+
               gap-10
             "
           >
 
             {/* LEFT */}
 
-            <div>
+            <div className="w-full">
 
               <h3
                 className="
-                  text-4xl
-                  font-bold
-                  text-gray-900
+                  text-[2rem]
+                  sm:text-4xl
+
+                  font-black
+
                   leading-tight
+
+                  text-gray-900
                 "
                 style={{
-                  letterSpacing:"-0.04em"
+                  letterSpacing:"-0.04em",
                 }}
               >
 
@@ -420,8 +481,14 @@ function WhyChooseUs() {
               <p
                 className="
                   text-gray-500
+
                   mt-5
+
                   leading-8
+
+                  text-[15px]
+                  sm:text-base
+
                   max-w-2xl
                 "
               >
@@ -439,83 +506,87 @@ function WhyChooseUs() {
 
             <div
               className="
+                w-full
+                xl:w-auto
+
                 grid
                 grid-cols-3
-                gap-8
+
+                gap-4
+                sm:gap-8
               "
             >
 
-              <div className="text-center">
+              {[
+                {
+                  value:"30+",
+                  label:"Businesses",
+                },
 
-                <h4
+                {
+                  value:"2X",
+                  label:"Growth",
+                },
+
+                {
+                  value:"100%",
+                  label:"Support",
+                },
+              ].map((item, index) => (
+
+                <div
+                  key={index}
+
                   className="
-                    text-5xl
-                    font-bold
-                    text-gray-900
+                    text-center
+
+                    bg-gray-50
+
+                    rounded-2xl
+
+                    px-4
+                    py-5
+                    sm:px-6
+                    sm:py-7
                   "
                 >
-                  30+
-                </h4>
 
-                <p
-                  className="
-                    text-gray-500
-                    text-sm
-                    mt-2
-                  "
-                >
-                  Businesses
-                </p>
+                  <h4
+                    className="
+                      text-3xl
+                      sm:text-5xl
 
-              </div>
+                      font-black
 
-              <div className="text-center">
+                      text-gray-900
+                    "
+                    style={{
+                      letterSpacing:"-0.05em",
+                    }}
+                  >
 
-                <h4
-                  className="
-                    text-5xl
-                    font-bold
-                    text-gray-900
-                  "
-                >
-                  2X
-                </h4>
+                    {item.value}
 
-                <p
-                  className="
-                    text-gray-500
-                    text-sm
-                    mt-2
-                  "
-                >
-                  Growth
-                </p>
+                  </h4>
 
-              </div>
+                  <p
+                    className="
+                      text-gray-500
 
-              <div className="text-center">
+                      text-xs
+                      sm:text-sm
 
-                <h4
-                  className="
-                    text-5xl
-                    font-bold
-                    text-gray-900
-                  "
-                >
-                  100%
-                </h4>
+                      mt-2
+                    "
+                  >
 
-                <p
-                  className="
-                    text-gray-500
-                    text-sm
-                    mt-2
-                  "
-                >
-                  Support
-                </p>
+                    {item.label}
 
-              </div>
+                  </p>
+
+                </div>
+
+              ))}
 
             </div>
 

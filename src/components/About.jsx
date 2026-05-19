@@ -2,14 +2,46 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 
 const features = [
-  { label: "Business Analysis", icon: "🔍", desc: "Deep-dive audits to find growth gaps" },
-  { label: "Business Development", icon: "🌱", desc: "Build sustainable growth systems" },
-  { label: "Marketing Strategies", icon: "🎯", desc: "Data-driven, ROI-focused campaigns" },
-  { label: "Sales Strategies", icon: "📈", desc: "Convert leads into loyal customers" },
-  { label: "Business Astrology", icon: "🔮", desc: "Unique timing-based growth insights" },
-  { label: "Meta & Google Ads", icon: "📣", desc: "Paid media that actually delivers" },
-  { label: "Website Development", icon: "💻", desc: "Fast, beautiful, conversion-ready sites" },
-  { label: "Mobile App Development", icon: "📱", desc: "Apps that engage and retain users" },
+  {
+    label: "Business Analysis",
+    icon: "🔍",
+    desc: "Deep-dive audits to find growth gaps",
+  },
+  {
+    label: "Business Development",
+    icon: "🌱",
+    desc: "Build sustainable growth systems",
+  },
+  {
+    label: "Marketing Strategies",
+    icon: "🎯",
+    desc: "Data-driven, ROI-focused campaigns",
+  },
+  {
+    label: "Sales Strategies",
+    icon: "📈",
+    desc: "Convert leads into loyal customers",
+  },
+  {
+    label: "Business Astrology",
+    icon: "🔮",
+    desc: "Unique timing-based growth insights",
+  },
+  {
+    label: "Meta & Google Ads",
+    icon: "📣",
+    desc: "Paid media that actually delivers",
+  },
+  {
+    label: "Website Development",
+    icon: "💻",
+    desc: "Fast, beautiful, conversion-ready sites",
+  },
+  {
+    label: "Mobile App Development",
+    icon: "📱",
+    desc: "Apps that engage and retain users",
+  },
 ]
 
 const stats = [
@@ -17,301 +49,306 @@ const stats = [
     value: "30+",
     label: "Happy Clients",
     sub: "Transformed & expanded online",
-    bg: "from-violet-50 to-indigo-50",
-    border: "border-violet-200",
-    text: "text-violet-600",
+    gradient: "from-violet-500 to-indigo-600",
+    bg: "bg-violet-50",
     icon: "🤝",
   },
   {
     value: "2×",
     label: "Average Growth",
     sub: "Within the first 6 months",
-    bg: "from-sky-50 to-cyan-50",
-    border: "border-sky-200",
-    text: "text-sky-600",
+    gradient: "from-sky-500 to-cyan-500",
+    bg: "bg-sky-50",
     icon: "🚀",
   },
   {
     value: "↓60%",
     label: "Marketing Cost",
     sub: "vs. traditional spend",
-    bg: "from-emerald-50 to-teal-50",
-    border: "border-emerald-200",
-    text: "text-emerald-600",
+    gradient: "from-emerald-500 to-teal-600",
+    bg: "bg-emerald-50",
     icon: "💸",
   },
   {
     value: "2024",
     label: "Founded",
     sub: "Built to grow with you",
-    bg: "from-amber-50 to-yellow-50",
-    border: "border-amber-200",
-    text: "text-amber-600",
+    gradient: "from-orange-500 to-amber-500",
+    bg: "bg-orange-50",
     icon: "🏛️",
   },
 ]
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.1,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      ease: "easeOut",
-    },
-  },
-}
 
 export default function About() {
 
   const [hovered, setHovered] = useState(null)
 
   return (
+
     <section
       id="about"
-      className="relative overflow-hidden"
+      className="
+        relative
+        overflow-hidden
+        py-24
+        md:py-32
+        px-4
+        sm:px-6
+      "
       style={{
-        padding: "120px 32px",
         background:
-          "linear-gradient(160deg, #fafafa 0%, #f3f0ff 50%, #eff6ff 100%)",
-        fontFamily: "'DM Sans', sans-serif",
+          "linear-gradient(180deg,#fafafa 0%,#f5f3ff 50%,#eff6ff 100%)"
       }}
     >
 
-      {/* BLOBS */}
+      {/* BACKGROUND BLURS */}
 
       <div
-        aria-hidden
+        className="
+          absolute
+          top-[-180px]
+          left-[-120px]
+          w-[420px]
+          h-[420px]
+          rounded-full
+          blur-3xl
+          opacity-20
+        "
         style={{
-          position: "absolute",
-          top: -180,
-          left: -180,
-          width: 600,
-          height: 600,
-          borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(108,99,255,0.12), transparent 70%)",
-          filter: "blur(20px)",
+            "linear-gradient(135deg,#8b5cf6,#6366f1)"
         }}
       />
 
       <div
-        aria-hidden
+        className="
+          absolute
+          bottom-[-180px]
+          right-[-120px]
+          w-[420px]
+          h-[420px]
+          rounded-full
+          blur-3xl
+          opacity-20
+        "
         style={{
-          position: "absolute",
-          bottom: -200,
-          right: -150,
-          width: 500,
-          height: 500,
-          borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(14,165,233,0.10), transparent 70%)",
+            "linear-gradient(135deg,#06b6d4,#3b82f6)"
         }}
       />
 
       {/* CONTAINER */}
 
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          width: "100%",
-          maxWidth: 1450,
-          margin: "0 auto",
-        }}
-      >
+      <div className="relative z-10 max-w-[1450px] mx-auto">
 
-        {/* BADGE */}
+        {/* TOP */}
 
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: 24,
-          }}
-        >
+        <div className="text-center">
 
-          <span
+          {/* BADGE */}
+
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-3
+              px-5
+              py-3
+              rounded-full
+              text-sm
+              font-semibold
+              mb-8
+            "
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-
-              padding: "12px 22px",
-
-              borderRadius: 999,
-
               background:
                 "linear-gradient(135deg,#ede9fe,#dbeafe)",
-
-              border: "1px solid #c7d2fe",
-
-              color: "#4338ca",
-
-              fontSize: "0.9rem",
-              fontWeight: 700,
-
-              boxShadow:
-                "0 8px 24px rgba(99,102,241,0.10)",
+              color:"#4338ca",
+              border:"1px solid #c7d2fe"
             }}
           >
 
             <span
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: "50%",
-                background: "#8b5cf6",
-              }}
+              className="
+                w-2
+                h-2
+                rounded-full
+                bg-violet-500
+              "
             />
 
             About Grow Up
 
-          </span>
+          </div>
 
-        </motion.div>
+          {/* HEADING */}
 
-        {/* HEADING */}
+          <motion.h2
+            initial={{
+              opacity:0,
+              y:30
+            }}
 
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          style={{
-            textAlign: "center",
+            whileInView={{
+              opacity:1,
+              y:0
+            }}
 
-            fontSize: "clamp(3rem,5vw,5.2rem)",
+            transition={{
+              duration:0.7
+            }}
 
-            fontWeight: 800,
+            viewport={{ once:true }}
 
-            lineHeight: 1.02,
+            className="
+              text-4xl
+              sm:text-5xl
+              lg:text-6xl
+              font-bold
+              leading-tight
+              text-gray-900
+              max-w-5xl
+              mx-auto
+            "
 
-            letterSpacing: "-0.05em",
-
-            color: "#111827",
-
-            maxWidth: 1000,
-
-            margin: "0 auto",
-          }}
-        >
-
-          Turning Small Businesses Into{" "}
-
-          <span
             style={{
-              background:
-                "linear-gradient(90deg,#6C63FF,#38BDF8)",
-
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              letterSpacing:"-0.05em"
             }}
           >
-            Successful Brands
-          </span>
 
-        </motion.h2>
+            Turning Small Businesses Into{" "}
 
-        {/* SUBTEXT */}
+            <span
+              style={{
+                background:
+                  "linear-gradient(90deg,#6366f1,#06b6d4)",
+                WebkitBackgroundClip:"text",
+                WebkitTextFillColor:"transparent"
+              }}
+            >
+              Successful Brands
+            </span>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          style={{
-            textAlign: "center",
+          </motion.h2>
 
-            fontSize: "1.15rem",
+          {/* SUBTEXT */}
 
-            color: "#6b7280",
+          <motion.p
+            initial={{
+              opacity:0
+            }}
 
-            lineHeight: 1.9,
+            whileInView={{
+              opacity:1
+            }}
 
-            maxWidth: 850,
+            transition={{
+              duration:0.7,
+              delay:0.2
+            }}
 
-            margin:
-              "28px auto 0",
-          }}
-        >
+            viewport={{ once:true }}
 
-          Founded in 2024, Grow Up Business Consultancy helps startups and growing businesses
-          scale smarter — through powerful marketing, lead generation, and digital solutions
-          that are fast, effective, and always budget-friendly.
+            className="
+              text-gray-500
+              text-base
+              sm:text-lg
+              leading-8
+              sm:leading-9
+              max-w-3xl
+              mx-auto
+              mt-8
+            "
+          >
 
-        </motion.p>
+            Founded in 2024, Grow Up Business Consultancy helps startups and growing businesses
+            scale smarter through powerful marketing, lead generation, and digital solutions
+            that are fast, effective, and always budget-friendly.
+
+          </motion.p>
+
+        </div>
 
         {/* MISSION */}
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: 44,
-            marginBottom: 90,
+          initial={{
+            opacity:0,
+            y:20
           }}
+
+          whileInView={{
+            opacity:1,
+            y:0
+          }}
+
+          transition={{
+            duration:0.6,
+            delay:0.3
+          }}
+
+          viewport={{ once:true }}
+
+          className="
+            mt-14
+            mb-20
+            flex
+            justify-center
+          "
         >
 
           <div
+            className="
+              w-full
+              max-w-4xl
+
+              rounded-[28px]
+
+              border
+              border-white/60
+
+              bg-white/70
+
+              backdrop-blur-xl
+
+              p-6
+              sm:p-8
+
+              flex
+              flex-col
+              sm:flex-row
+
+              items-start
+              sm:items-center
+
+              gap-5
+            "
+
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-
-              background: "rgba(255,255,255,0.72)",
-
-              backdropFilter: "blur(16px)",
-
-              border:
-                "1px solid rgba(255,255,255,0.7)",
-
-              padding: "18px 28px",
-
-              borderRadius: 24,
-
               boxShadow:
-                "0 10px 30px rgba(99,102,241,0.10)",
-
-              maxWidth: 780,
+                "0 20px 50px rgba(99,102,241,0.08)"
             }}
           >
 
-            <span style={{ fontSize: "1.2rem" }}>
+            <div className="text-3xl">
               🎯
-            </span>
+            </div>
 
-            <span
-              style={{
-                color: "#6b7280",
-                lineHeight: 1.7,
-                fontSize: "0.98rem",
-              }}
+            <p
+              className="
+                text-gray-600
+                leading-8
+                text-[15px]
+                sm:text-base
+              "
             >
-              <strong style={{ color: "#111827" }}>
+
+              <span className="font-bold text-gray-900">
                 Our Mission:
-              </strong>{" "}
+              </span>{" "}
+
               Deliver fast, effective & affordable digital growth solutions for every business.
-            </span>
+
+            </p>
 
           </div>
 
@@ -320,135 +357,168 @@ export default function About() {
         {/* MAIN GRID */}
 
         <div
-          style={{
-            display: "grid",
-
-            gridTemplateColumns:
-              "1.05fr 0.95fr",
-
-            gap: 44,
-
-            alignItems: "start",
-          }}
+          className="
+            grid
+            xl:grid-cols-[1.1fr_0.9fr]
+            gap-10
+            xl:gap-14
+          "
         >
 
           {/* LEFT */}
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-
-            <motion.p
-              variants={itemVariants}
-              style={{
-                fontSize: "0.82rem",
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#8b5cf6",
-                marginBottom: 24,
-              }}
-            >
-              What We Offer
-            </motion.p>
+          <div>
 
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "1fr 1fr",
-                gap: 16,
-              }}
+              className="
+                text-sm
+                font-bold
+                tracking-[0.25em]
+                uppercase
+                text-violet-600
+                mb-8
+              "
+            >
+              What We Offer
+            </div>
+
+            {/* FEATURES */}
+
+            <div
+              className="
+                grid
+                sm:grid-cols-2
+                gap-5
+              "
             >
 
               {features.map((f, i) => (
 
                 <motion.div
                   key={i}
-                  variants={itemVariants}
-                  onMouseEnter={() => setHovered(i)}
-                  onMouseLeave={() => setHovered(null)}
+
+                  initial={{
+                    opacity:0,
+                    y:30
+                  }}
+
+                  whileInView={{
+                    opacity:1,
+                    y:0
+                  }}
+
+                  transition={{
+                    duration:0.5,
+                    delay:i * 0.05
+                  }}
+
+                  viewport={{ once:true }}
+
+                  onMouseEnter={() =>
+                    setHovered(i)
+                  }
+
+                  onMouseLeave={() =>
+                    setHovered(null)
+                  }
+
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+
+                    rounded-[30px]
+
+                    border
+                    border-black/[0.05]
+
+                    bg-white/75
+
+                    backdrop-blur-xl
+
+                    p-6
+                    sm:p-7
+
+                    transition-all
+                    duration-300
+                  "
+
                   style={{
-                    borderRadius: 26,
-
-                    padding: "22px 22px",
-
-                    background:
+                    transform:
                       hovered === i
-                        ? "linear-gradient(135deg,#ede9fe,#dbeafe)"
-                        : "rgba(255,255,255,0.72)",
-
-                    border:
-                      hovered === i
-                        ? "1px solid #a5b4fc"
-                        : "1px solid rgba(0,0,0,0.05)",
-
-                    backdropFilter: "blur(14px)",
+                        ? "translateY(-5px)"
+                        : "translateY(0)",
 
                     boxShadow:
                       hovered === i
-                        ? "0 18px 40px rgba(99,102,241,0.16)"
-                        : "0 8px 24px rgba(0,0,0,0.04)",
-
-                    transition: "0.35s ease",
-
-                    transform:
-                      hovered === i
-                        ? "translateY(-4px)"
-                        : "translateY(0)",
+                        ? "0 24px 50px rgba(99,102,241,0.12)"
+                        : "0 12px 30px rgba(0,0,0,0.04)"
                   }}
                 >
 
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: 16,
-                    }}
-                  >
+                  {/* GLOW */}
 
-                    <span
-                      style={{
-                        fontSize: "1.6rem",
-                        flexShrink: 0,
-                      }}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      opacity-0
+                      group-hover:opacity-100
+                      transition-all
+                      duration-500
+                    "
+                    style={{
+                      background:
+                        "linear-gradient(135deg,rgba(139,92,246,0.12),rgba(6,182,212,0.10))"
+                    }}
+                  />
+
+                  {/* CONTENT */}
+
+                  <div className="relative z-10">
+
+                    <div
+                      className="
+                        w-14
+                        h-14
+                        rounded-2xl
+
+                        flex
+                        items-center
+                        justify-center
+
+                        text-2xl
+
+                        bg-violet-50
+                        mb-6
+                      "
                     >
                       {f.icon}
-                    </span>
-
-                    <div>
-
-                      <div
-                        style={{
-                          fontWeight: 700,
-                          fontSize: "1rem",
-
-                          color:
-                            hovered === i
-                              ? "#4338ca"
-                              : "#111827",
-                        }}
-                      >
-                        {f.label}
-                      </div>
-
-                      <div
-                        style={{
-                          marginTop: 6,
-
-                          fontSize: "0.88rem",
-
-                          color: "#6b7280",
-
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {f.desc}
-                      </div>
-
                     </div>
+
+                    <h3
+                      className="
+                        text-lg
+                        sm:text-xl
+                        font-bold
+                        text-gray-900
+                        leading-snug
+                      "
+                    >
+                      {f.label}
+                    </h3>
+
+                    <p
+                      className="
+                        text-gray-500
+                        leading-7
+                        text-sm
+                        sm:text-[15px]
+                        mt-4
+                      "
+                    >
+                      {f.desc}
+                    </p>
 
                   </div>
 
@@ -458,178 +528,210 @@ export default function About() {
 
             </div>
 
-          </motion.div>
+          </div>
 
           {/* RIGHT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            style={{
-              position: "relative",
+            initial={{
+              opacity:0,
+              x:30
             }}
+
+            whileInView={{
+              opacity:1,
+              x:0
+            }}
+
+            transition={{
+              duration:0.7
+            }}
+
+            viewport={{ once:true }}
+
+            className="relative"
           >
 
             {/* FLOATING BADGE */}
 
             <div
+              className="
+                hidden
+                md:flex
+
+                absolute
+                top-[-18px]
+                right-8
+
+                z-10
+
+                items-center
+                gap-3
+
+                px-5
+                py-3
+
+                rounded-full
+
+                bg-white
+
+                border
+                border-violet-100
+
+                text-sm
+                font-semibold
+                text-violet-700
+              "
+
               style={{
-                position: "absolute",
-                top: -18,
-                right: 24,
-
-                zIndex: 10,
-
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-
-                background: "#fff",
-
-                border:
-                  "1px solid #e0e7ff",
-
-                padding: "12px 18px",
-
-                borderRadius: 999,
-
                 boxShadow:
-                  "0 10px 28px rgba(99,102,241,0.12)",
-
-                fontSize: "0.82rem",
-                fontWeight: 700,
-                color: "#4338ca",
+                  "0 14px 30px rgba(99,102,241,0.10)"
               }}
             >
 
               <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: "#22c55e",
-                }}
+                className="
+                  w-2
+                  h-2
+                  rounded-full
+                  bg-green-500
+                "
               />
 
               Trusted by growing businesses
 
             </div>
 
-            {/* CARD */}
+            {/* MAIN CARD */}
 
             <div
+              className="
+                rounded-[36px]
+
+                border
+                border-white/60
+
+                bg-white/75
+
+                backdrop-blur-2xl
+
+                p-6
+                sm:p-8
+                lg:p-10
+              "
+
               style={{
-                background:
-                  "rgba(255,255,255,0.75)",
-
-                backdropFilter: "blur(18px)",
-
-                border:
-                  "1px solid rgba(255,255,255,0.7)",
-
-                borderRadius: 36,
-
-                padding: 34,
-
                 boxShadow:
-                  "0 24px 70px rgba(99,102,241,0.14)",
+                  "0 30px 70px rgba(99,102,241,0.12)"
               }}
             >
 
               {/* STATS */}
 
               <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:
-                    "1fr 1fr",
-                  gap: 18,
-                }}
+                className="
+                  grid
+                  grid-cols-1
+                  sm:grid-cols-2
+                  gap-5
+                "
               >
 
                 {stats.map((s, i) => (
 
                   <motion.div
                     key={i}
+
                     initial={{
-                      opacity: 0,
-                      scale: 0.9,
+                      opacity:0,
+                      scale:0.9
                     }}
+
                     whileInView={{
-                      opacity: 1,
-                      scale: 1,
+                      opacity:1,
+                      scale:1
                     }}
+
                     transition={{
-                      duration: 0.5,
-                      delay: i * 0.08,
+                      duration:0.5,
+                      delay:i * 0.08
                     }}
-                    viewport={{ once: true }}
+
+                    viewport={{ once:true }}
+
                     whileHover={{
-                      scale: 1.03,
+                      y:-5
                     }}
-                    className={`bg-gradient-to-br ${s.bg} ${s.border}`}
-                    style={{
-                      borderRadius: 28,
 
-                      padding: "24px",
+                    className={`
+                      ${s.bg}
 
-                      borderWidth: 1,
+                      rounded-[28px]
 
-                      boxShadow:
-                        "0 10px 30px rgba(0,0,0,0.05)",
-                    }}
+                      p-6
+
+                      border
+                      border-white
+
+                      relative
+                      overflow-hidden
+                    `}
                   >
 
+                    {/* TOP */}
+
                     <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "flex-start",
-                      }}
+                      className="
+                        flex
+                        items-start
+                        justify-between
+                      "
                     >
 
                       <div
-                        className={s.text}
-                        style={{
-                          fontSize: "3rem",
-                          fontWeight: 800,
-                          letterSpacing: "-0.04em",
-                        }}
+                        className={`
+                          text-4xl
+                          font-black
+                          bg-gradient-to-r
+                          ${s.gradient}
+
+                          bg-clip-text
+                          text-transparent
+                        `}
                       >
                         {s.value}
                       </div>
 
-                      <span
-                        style={{
-                          fontSize: "1.4rem",
-                          opacity: 0.75,
-                        }}
-                      >
+                      <div className="text-2xl">
                         {s.icon}
-                      </span>
+                      </div>
 
                     </div>
 
-                    <div
-                      style={{
-                        marginTop: 10,
-                        fontWeight: 700,
-                        color: "#111827",
-                      }}
-                    >
-                      {s.label}
-                    </div>
+                    {/* TEXT */}
 
-                    <div
-                      style={{
-                        marginTop: 4,
-                        color: "#6b7280",
-                        fontSize: "0.82rem",
-                      }}
-                    >
-                      {s.sub}
+                    <div className="mt-5">
+
+                      <h4
+                        className="
+                          font-bold
+                          text-gray-900
+                        "
+                      >
+                        {s.label}
+                      </h4>
+
+                      <p
+                        className="
+                          text-gray-500
+                          text-sm
+                          leading-6
+                          mt-2
+                        "
+                      >
+                        {s.sub}
+                      </p>
+
                     </div>
 
                   </motion.div>
@@ -641,101 +743,105 @@ export default function About() {
               {/* STORY */}
 
               <div
-                style={{
-                  marginTop: 20,
+                className="
+                  mt-6
 
-                  borderRadius: 24,
+                  rounded-[28px]
 
-                  padding: "22px 24px",
+                  border
+                  border-violet-100
 
-                  background: "#f8f7ff",
+                  bg-violet-50/60
 
-                  border:
-                    "1px solid #ede9fe",
-                }}
+                  p-6
+                  sm:p-7
+                "
               >
 
                 <div
-                  style={{
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "#8b5cf6",
-                    marginBottom: 10,
-                  }}
+                  className="
+                    text-xs
+                    font-bold
+                    tracking-[0.2em]
+                    uppercase
+                    text-violet-600
+                    mb-4
+                  "
                 >
                   Our Story
                 </div>
 
-                <div
-                  style={{
-                    color: "#6b7280",
-                    lineHeight: 1.8,
-                    fontSize: "0.95rem",
-                  }}
+                <p
+                  className="
+                    text-gray-600
+                    leading-8
+                    text-sm
+                    sm:text-[15px]
+                  "
                 >
+
                   In just 2 years, we've helped{" "}
-                  <strong style={{ color: "#111827" }}>
+
+                  <span className="font-bold text-gray-900">
                     30+ businesses
-                  </strong>{" "}
+                  </span>{" "}
+
                   transform and expand their presence online.
                   From early-stage startups to growing local brands,
-                  we bring strategy, creativity, and execution under one roof — at a cost that works for you.
-                </div>
+                  we bring strategy, creativity, and execution under one roof.
+
+                </p>
 
               </div>
 
-              {/* BOTTOM NOTE */}
+              {/* BOTTOM */}
 
               <div
-                style={{
-                  marginTop: 18,
+                className="
+                  mt-5
 
-                  borderRadius: 22,
+                  rounded-[24px]
 
-                  padding: "20px 22px",
+                  border
+                  border-emerald-100
 
-                  background: "#f0fdf4",
+                  bg-emerald-50
 
-                  border:
-                    "1px solid #bbf7d0",
+                  p-5
 
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 16,
-                }}
+                  flex
+                  items-start
+                  gap-4
+                "
               >
 
-                <div
-                  style={{
-                    fontSize: "1.8rem",
-                    flexShrink: 0,
-                  }}
-                >
+                <div className="text-2xl">
                   🏆
                 </div>
 
                 <div>
 
-                  <div
-                    style={{
-                      fontWeight: 700,
-                      color: "#111827",
-                    }}
+                  <h4
+                    className="
+                      font-bold
+                      text-gray-900
+                    "
                   >
                     Rated #1 for ROI by clients
-                  </div>
+                  </h4>
 
-                  <div
-                    style={{
-                      marginTop: 4,
-                      color: "#6b7280",
-                      fontSize: "0.82rem",
-                    }}
+                  <p
+                    className="
+                      text-gray-500
+                      text-sm
+                      leading-6
+                      mt-2
+                    "
                   >
+
                     Smart digital solutions · Budget-friendly · Fast results
-                  </div>
+
+                  </p>
 
                 </div>
 
@@ -748,33 +854,6 @@ export default function About() {
         </div>
 
       </div>
-
-      {/* MOBILE */}
-
-      <style>{`
-        @media(max-width:1024px){
-
-          #about{
-            padding:100px 24px !important;
-          }
-
-          #about .main-grid{
-            grid-template-columns:1fr !important;
-          }
-        }
-
-        @media(max-width:768px){
-
-          #about{
-            padding:90px 18px !important;
-          }
-
-          .features-grid{
-            grid-template-columns:1fr !important;
-          }
-
-        }
-      `}</style>
 
     </section>
   )

@@ -1,6 +1,4 @@
 import {
-  FaFacebookF,
-  FaInstagram,
   FaWhatsapp,
   FaArrowRight
 } from "react-icons/fa"
@@ -27,23 +25,37 @@ function Footer() {
       className="
         relative
         overflow-hidden
+
         bg-[#050505]
+
         text-white
-        pt-28
-        pb-10
-        px-6
+
+        pt-20
+        sm:pt-24
+        lg:pt-28
+
+        pb-8
+        sm:pb-10
+
+        px-4
+        sm:px-6
       "
     >
 
-      {/* BACKGROUND BLURS */}
+      {/* BLUR BG */}
 
       <div
         className="
           absolute
-          top-[-180px]
-          left-[-140px]
-          w-[420px]
-          h-[420px]
+          top-[-150px]
+          left-[-120px]
+
+          w-[280px]
+          sm:w-[420px]
+
+          h-[280px]
+          sm:h-[420px]
+
           rounded-full
           blur-3xl
           opacity-20
@@ -57,10 +69,15 @@ function Footer() {
       <div
         className="
           absolute
-          bottom-[-180px]
-          right-[-140px]
-          w-[420px]
-          h-[420px]
+          bottom-[-150px]
+          right-[-120px]
+
+          w-[280px]
+          sm:w-[420px]
+
+          h-[280px]
+          sm:h-[420px]
+
           rounded-full
           blur-3xl
           opacity-20
@@ -73,16 +90,28 @@ function Footer() {
 
       {/* CONTAINER */}
 
-      <div className="relative z-10 max-w-[1450px] mx-auto">
+      <div
+        className="
+          relative
+          z-10
 
-        {/* TOP SECTION */}
+          max-w-[1450px]
+          mx-auto
+        "
+      >
+
+        {/* TOP */}
 
         <div
           className="
             grid
+
+            grid-cols-1
             sm:grid-cols-2
-            lg:grid-cols-4
-            gap-14
+            xl:grid-cols-4
+
+            gap-12
+            sm:gap-14
             lg:gap-16
           "
         >
@@ -93,42 +122,73 @@ function Footer() {
 
             {/* LOGO */}
 
-            <div className="flex items-center gap-4">
+            <div
+              className="
+                flex
+                items-center
+                gap-4
+              "
+            >
 
               <div
                 className="
-                  w-14
-                  h-14
+                  w-12
+                  h-12
+
+                  sm:w-14
+                  sm:h-14
+
                   rounded-2xl
-                  flex
-                  items-center
-                  justify-center
-                  text-white
-                  font-bold
-                  text-xl
+
+                  overflow-hidden
+
                   shadow-lg
                 "
+
                 style={{
                   background:
                     "linear-gradient(135deg,#2563eb,#7c3aed)"
                 }}
               >
-                G
+
+                <img
+                  src="/logo.png"
+                  alt="Growup Logo"
+
+                  className="
+                    w-full
+                    h-full
+                    object-cover
+                  "
+                />
+
               </div>
 
               <div>
 
                 <h2
                   className="
-                    text-3xl
-                    font-bold
+                    text-2xl
+                    sm:text-3xl
+
+                    font-black
+
                     tracking-tight
                   "
                 >
                   Growup
                 </h2>
 
-                <p className="text-sm text-gray-500 mt-1">
+                <p
+                  className="
+                    text-xs
+                    sm:text-sm
+
+                    text-gray-500
+
+                    mt-1
+                  "
+                >
                   Business Consultancy
                 </p>
 
@@ -136,14 +196,21 @@ function Footer() {
 
             </div>
 
-            {/* DESCRIPTION */}
+            {/* DESC */}
 
             <p
               className="
                 text-gray-400
-                mt-7
-                leading-8
-                text-[15px]
+
+                mt-6
+                sm:mt-7
+
+                leading-7
+                sm:leading-8
+
+                text-sm
+                sm:text-[15px]
+
                 max-w-sm
               "
             >
@@ -154,27 +221,41 @@ function Footer() {
 
             </p>
 
-            {/* CTA */}
+            {/* BUTTON */}
 
             <a
               href="#contact"
+
               className="
                 inline-flex
                 items-center
+                justify-center
+
                 gap-3
-                mt-8
-                px-6
+
+                mt-7
+                sm:mt-8
+
+                px-5
+                sm:px-6
+
                 py-4
+
                 rounded-2xl
-                font-semibold
+
                 text-sm
+                font-semibold
+
                 transition-all
                 duration-300
+
                 hover:-translate-y-1
               "
+
               style={{
                 background:
                   "linear-gradient(135deg,#111827,#1f2937)",
+
                 boxShadow:
                   "0 14px 30px rgba(0,0,0,0.35)"
               }}
@@ -194,31 +275,53 @@ function Footer() {
 
             <h3
               className="
-                text-xl
-                font-semibold
-                mb-8
+                text-lg
+                sm:text-xl
+
+                font-bold
+
+                mb-6
+                sm:mb-8
               "
             >
               Quick Links
             </h3>
 
-            <div className="flex flex-col gap-5">
+            <div
+              className="
+                flex
+                flex-col
+
+                gap-4
+                sm:gap-5
+              "
+            >
 
               {links.map((item, index) => (
 
                 <a
                   key={index}
                   href={item.href}
+
                   className="
                     text-gray-400
+
                     hover:text-white
+
                     transition-all
                     duration-300
+
                     hover:translate-x-1
+
+                    text-sm
+                    sm:text-base
+
                     w-fit
                   "
                 >
+
                   {item.label}
+
                 </a>
 
               ))}
@@ -233,25 +336,43 @@ function Footer() {
 
             <h3
               className="
-                text-xl
-                font-semibold
-                mb-8
+                text-lg
+                sm:text-xl
+
+                font-bold
+
+                mb-6
+                sm:mb-8
               "
             >
               Services
             </h3>
 
-            <div className="flex flex-col gap-5">
+            <div
+              className="
+                flex
+                flex-col
+
+                gap-4
+                sm:gap-5
+              "
+            >
 
               {services.map((service, index) => (
 
                 <div
                   key={index}
+
                   className="
                     text-gray-400
+
                     flex
                     items-center
+
                     gap-3
+
+                    text-sm
+                    sm:text-base
                   "
                 >
 
@@ -259,7 +380,9 @@ function Footer() {
                     className="
                       w-2
                       h-2
+
                       rounded-full
+
                       bg-violet-500
                     "
                   />
@@ -280,9 +403,13 @@ function Footer() {
 
             <h3
               className="
-                text-xl
-                font-semibold
-                mb-8
+                text-lg
+                sm:text-xl
+
+                font-bold
+
+                mb-6
+                sm:mb-8
               "
             >
               Contact
@@ -291,8 +418,12 @@ function Footer() {
             <p
               className="
                 text-gray-400
-                leading-8
-                text-[15px]
+
+                leading-7
+                sm:leading-8
+
+                text-sm
+                sm:text-[15px]
               "
             >
 
@@ -305,84 +436,85 @@ function Footer() {
 
             <div
               className="
-                mt-8
+                mt-7
+                sm:mt-8
+
                 p-5
-                rounded-3xl
+                sm:p-6
+
+                rounded-[28px]
+
                 border
                 border-white/10
+
                 bg-white/[0.04]
+
                 backdrop-blur-xl
               "
             >
 
-              <div className="flex gap-4">
-
-                {/* FACEBOOK */}
-
-                <div
-                  className="
-                    w-14
-                    h-14
-                    rounded-2xl
-                    bg-white/5
-                    flex
-                    items-center
-                    justify-center
-                    hover:bg-blue-600
-                    transition-all
-                    duration-300
-                    cursor-pointer
-                    hover:-translate-y-1
-                  "
-                >
-
-                  <FaFacebookF className="text-lg" />
-
-                </div>
-
-                {/* INSTAGRAM */}
-
-                <div
-                  className="
-                    w-14
-                    h-14
-                    rounded-2xl
-                    bg-white/5
-                    flex
-                    items-center
-                    justify-center
-                    hover:bg-pink-600
-                    transition-all
-                    duration-300
-                    cursor-pointer
-                    hover:-translate-y-1
-                  "
-                >
-
-                  <FaInstagram className="text-lg" />
-
-                </div>
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-4
+                "
+              >
 
                 {/* WHATSAPP */}
 
-                <div
+                <a
+                  href="https://wa.me/919000000000"
+                  target="_blank"
+                  rel="noreferrer"
+
                   className="
                     w-14
                     h-14
+
                     rounded-2xl
+
                     bg-white/5
+
                     flex
                     items-center
                     justify-center
+
                     hover:bg-green-600
+
                     transition-all
                     duration-300
-                    cursor-pointer
+
                     hover:-translate-y-1
                   "
                 >
 
                   <FaWhatsapp className="text-lg" />
+
+                </a>
+
+                <div>
+
+                  <div
+                    className="
+                      text-white
+                      font-semibold
+                    "
+                  >
+                    WhatsApp Support
+                  </div>
+
+                  <div
+                    className="
+                      text-gray-500
+
+                      text-sm
+
+                      mt-1
+                    "
+                  >
+                    Quick response support
+                  </div>
 
                 </div>
 
@@ -398,10 +530,15 @@ function Footer() {
 
         <div
           className="
-            mt-20
-            mb-8
+            mt-14
+            sm:mt-20
+
+            mb-6
+            sm:mb-8
+
             h-[1px]
             w-full
+
             bg-gradient-to-r
             from-transparent
             via-white/10
@@ -416,13 +553,25 @@ function Footer() {
             flex
             flex-col
             md:flex-row
+
             items-center
             justify-between
+
             gap-5
           "
         >
 
-          <p className="text-gray-500 text-sm">
+          <p
+            className="
+              text-gray-500
+
+              text-xs
+              sm:text-sm
+
+              text-center
+              md:text-left
+            "
+          >
 
             © 2026 Growup Business Consultancy.
             All rights reserved.
@@ -433,14 +582,20 @@ function Footer() {
             className="
               flex
               items-center
-              gap-6
-              text-sm
+
+              gap-5
+              sm:gap-6
+
+              text-xs
+              sm:text-sm
+
               text-gray-500
             "
           >
 
             <a
               href="#"
+
               className="
                 hover:text-white
                 transition
@@ -451,6 +606,7 @@ function Footer() {
 
             <a
               href="#"
+
               className="
                 hover:text-white
                 transition
