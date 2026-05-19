@@ -464,7 +464,7 @@ function Footer() {
                 {/* WHATSAPP */}
 
                 <a
-                  href="https://wa.me/919000000000"
+                  href="https://wa.me/9182986117"
                   target="_blank"
                   rel="noreferrer"
 

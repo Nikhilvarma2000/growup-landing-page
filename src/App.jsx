@@ -108,7 +108,7 @@ function App() {
         {/* WHATSAPP BUTTON */}
 
         <a
-          href="https://wa.me/919150299458"
+          href="https://wa.me/9182986117"
           target="_blank"
           rel="noopener noreferrer"
         >
