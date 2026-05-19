@@ -1,34 +1,5 @@
 import { motion } from "framer-motion"
-
-const stats = [
-  {
-    value: "30+",
-    title: "Businesses Grown",
-    icon: "🚀",
-    gradient: "from-violet-500 to-indigo-600",
-  },
-
-  {
-    value: "2X",
-    title: "Average Growth",
-    icon: "📈",
-    gradient: "from-sky-500 to-cyan-500",
-  },
-
-  {
-    value: "8+",
-    title: "Services",
-    icon: "⚡",
-    gradient: "from-orange-500 to-amber-500",
-  },
-
-  {
-    value: "24/7",
-    title: "Support",
-    icon: "💬",
-    gradient: "from-emerald-500 to-teal-600",
-  },
-]
+import { useState } from "react"
 
 const services = [
   "Meta Ads",
@@ -38,6 +9,68 @@ const services = [
 ]
 
 export default function Hero() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    city: "",
+  })
+
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e) => {
+
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+
+  }
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault()
+
+    setLoading(true)
+
+    try {
+
+      await fetch(
+        "YOUR_GOOGLE_SCRIPT_URL",
+        {
+          method: "POST",
+
+          mode: "no-cors",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(formData),
+        }
+      )
+
+      alert("Submitted Successfully!")
+
+      setFormData({
+        name: "",
+        phone: "",
+        city: "",
+      })
+
+    } catch (error) {
+
+      console.log(error)
+
+      alert("Something went wrong")
+
+    } finally {
+
+      setLoading(false)
+
+    }
+
+  }
 
   return (
 
@@ -58,7 +91,7 @@ export default function Hero() {
       "
       style={{
         fontFamily:
-          "'Plus Jakarta Sans', sans-serif"
+          "'Plus Jakarta Sans', sans-serif",
       }}
     >
 
@@ -69,17 +102,20 @@ export default function Hero() {
           absolute
           top-[-180px]
           left-[-120px]
+
           w-[350px]
           md:w-[500px]
+
           h-[350px]
           md:h-[500px]
+
           rounded-full
           blur-3xl
           opacity-20
         "
         style={{
           background:
-            "linear-gradient(135deg,#8b5cf6,#6366f1)"
+            "linear-gradient(135deg,#8b5cf6,#6366f1)",
         }}
       />
 
@@ -88,17 +124,20 @@ export default function Hero() {
           absolute
           bottom-[-180px]
           right-[-120px]
+
           w-[350px]
           md:w-[500px]
+
           h-[350px]
           md:h-[500px]
+
           rounded-full
           blur-3xl
           opacity-20
         "
         style={{
           background:
-            "linear-gradient(135deg,#06b6d4,#3b82f6)"
+            "linear-gradient(135deg,#06b6d4,#3b82f6)",
         }}
       />
 
@@ -119,7 +158,7 @@ export default function Hero() {
           grid
           xl:grid-cols-2
 
-          gap-14
+          gap-12
           xl:gap-20
 
           items-center
@@ -131,21 +170,19 @@ export default function Hero() {
         <motion.div
           initial={{
             opacity:0,
-            y:40
+            y:40,
           }}
 
           animate={{
             opacity:1,
-            y:0
+            y:0,
           }}
 
           transition={{
-            duration:0.7
+            duration:0.7,
           }}
 
-          className="
-            w-full
-          "
+          className="w-full"
         >
 
           {/* BADGE */}
@@ -175,12 +212,11 @@ export default function Hero() {
 
               backdrop-blur-xl
             "
-
             style={{
               boxShadow:
                 "0 10px 30px rgba(0,0,0,0.04)",
 
-              color:"#4338ca"
+              color:"#4338ca",
             }}
           >
 
@@ -188,7 +224,9 @@ export default function Hero() {
               className="
                 w-2
                 h-2
+
                 rounded-full
+
                 bg-green-500
               "
             />
@@ -203,7 +241,7 @@ export default function Hero() {
             className="
               mt-7
 
-              text-[2.9rem]
+              text-[2.8rem]
               sm:text-[4rem]
               md:text-[5rem]
               xl:text-[6rem]
@@ -214,9 +252,8 @@ export default function Hero() {
 
               text-gray-900
             "
-
             style={{
-              letterSpacing:"-0.07em"
+              letterSpacing:"-0.07em",
             }}
           >
 
@@ -228,14 +265,13 @@ export default function Hero() {
                 block
                 mt-2
               "
-
               style={{
                 background:
                   "linear-gradient(90deg,#2563eb,#7c3aed)",
 
                 WebkitBackgroundClip:"text",
 
-                WebkitTextFillColor:"transparent"
+                WebkitTextFillColor:"transparent",
               }}
             >
 
@@ -309,10 +345,9 @@ export default function Hero() {
 
                   backdrop-blur-xl
                 "
-
                 style={{
                   boxShadow:
-                    "0 8px 20px rgba(0,0,0,0.04)"
+                    "0 8px 20px rgba(0,0,0,0.04)",
                 }}
               >
 
@@ -321,110 +356,6 @@ export default function Hero() {
               </div>
 
             ))}
-
-          </div>
-
-          {/* BUTTONS */}
-
-          <div
-            className="
-              flex
-              flex-col
-              sm:flex-row
-
-              gap-4
-
-              mt-12
-            "
-          >
-
-            {/* BTN 1 */}
-
-            <a
-              href="#contact"
-
-              className="
-                w-full
-                sm:w-auto
-
-                flex
-                items-center
-                justify-center
-
-                px-8
-                py-5
-
-                rounded-2xl
-
-                text-[15px]
-                font-bold
-
-                text-white
-
-                transition-all
-                duration-300
-
-                hover:-translate-y-1
-              "
-
-              style={{
-                background:
-                  "linear-gradient(135deg,#111827,#1f2937)",
-
-                boxShadow:
-                  "0 18px 40px rgba(0,0,0,0.15)"
-              }}
-            >
-
-              Get Free Consultation
-
-            </a>
-
-            {/* BTN 2 */}
-
-            <a
-              href="#services"
-
-              className="
-                w-full
-                sm:w-auto
-
-                flex
-                items-center
-                justify-center
-
-                px-8
-                py-5
-
-                rounded-2xl
-
-                text-[15px]
-                font-bold
-
-                text-gray-900
-
-                bg-white/80
-
-                border
-                border-black/[0.05]
-
-                backdrop-blur-xl
-
-                transition-all
-                duration-300
-
-                hover:-translate-y-1
-              "
-
-              style={{
-                boxShadow:
-                  "0 10px 25px rgba(0,0,0,0.04)"
-              }}
-            >
-
-              Explore Services
-
-            </a>
 
           </div>
 
@@ -463,258 +394,390 @@ export default function Hero() {
         <motion.div
           initial={{
             opacity:0,
-            scale:0.92
+            scale:0.92,
           }}
 
           animate={{
             opacity:1,
-            scale:1
+            scale:1,
           }}
 
           transition={{
-            duration:0.8
+            duration:0.8,
           }}
 
-          className="
-            w-full
-          "
+          className="w-full"
         >
-
-          {/* MAIN CARD */}
 
           <div
             className="
-              w-full
+              relative
+              overflow-hidden
 
               rounded-[32px]
 
-              bg-white/75
+              bg-white/80
 
               border
               border-white
 
               backdrop-blur-2xl
 
-              p-4
-              sm:p-6
+              p-5
+              sm:p-7
               lg:p-8
             "
-
             style={{
               boxShadow:
-                "0 30px 80px rgba(99,102,241,0.12)"
+                "0 30px 80px rgba(99,102,241,0.12)",
             }}
           >
 
-            {/* TOP CARD */}
+            {/* GLOW */}
 
             <div
               className="
-                relative
-                overflow-hidden
+                absolute
+                top-[-100px]
+                right-[-100px]
 
-                rounded-[28px]
+                w-[260px]
+                h-[260px]
 
-                p-6
-                sm:p-8
-                md:p-10
-
-                min-h-[240px]
-
-                flex
-                flex-col
-                justify-center
+                rounded-full
+                blur-3xl
+                opacity-20
               "
-
               style={{
                 background:
-                  "linear-gradient(135deg,#111827,#1f2937)"
+                  "linear-gradient(135deg,#6366f1,#8b5cf6)",
               }}
-            >
+            />
+
+            <div className="relative z-10">
+
+              {/* OFFER CARD */}
 
               <div
                 className="
-                  absolute
-                  top-[-70px]
-                  right-[-70px]
+                  relative
+                  overflow-hidden
 
-                  w-[220px]
-                  h-[220px]
+                  rounded-[28px]
 
-                  rounded-full
+                  p-6
+                  sm:p-8
+
+                  text-white
                 "
-
                 style={{
                   background:
-                    "rgba(255,255,255,0.05)"
+                    "linear-gradient(135deg,#111827,#1f2937)",
                 }}
-              />
-
-              <div className="relative z-10">
+              >
 
                 <div
                   className="
-                    text-white/70
-                    text-sm
+                    absolute
+                    top-[-60px]
+                    right-[-60px]
+
+                    w-[180px]
+                    h-[180px]
+
+                    rounded-full
                   "
-                >
-                  Business Growth
-                </div>
-
-                <div
-                  className="
-                    mt-4
-
-                    text-[4rem]
-                    sm:text-[5rem]
-
-                    leading-none
-
-                    font-black
-
-                    text-white
-                  "
-
                   style={{
-                    letterSpacing:"-0.06em"
+                    background:
+                      "rgba(255,255,255,0.05)",
                   }}
-                >
+                />
 
-                  +240%
+                <div className="relative z-10">
+
+                  <div
+                    className="
+                      inline-flex
+                      items-center
+
+                      px-4
+                      py-2
+
+                      rounded-full
+
+                      bg-white/10
+
+                      text-xs
+                      font-semibold
+
+                      mb-6
+                    "
+                  >
+
+                    🔥 Limited Time Offer
+
+                  </div>
+
+                  <h3
+                    className="
+                      text-3xl
+                      sm:text-5xl
+
+                      font-black
+
+                      leading-none
+                    "
+                    style={{
+                      letterSpacing:"-0.06em",
+                    }}
+                  >
+
+                    Websites
+                    <br />
+
+                    <span className="text-cyan-400">
+                      Only at
+                    </span>
+
+                  </h3>
+
+                  <div
+                    className="
+                      mt-5
+
+                      text-5xl
+                      sm:text-6xl
+
+                      font-black
+
+                      leading-none
+                    "
+                    style={{
+                      letterSpacing:"-0.06em",
+                    }}
+                  >
+
+                    ₹1999/-
+
+                  </div>
+
+                  <p
+                    className="
+                      mt-5
+
+                      text-white/75
+
+                      leading-7
+
+                      text-sm
+                      sm:text-base
+                    "
+                  >
+
+                    Modern responsive business websites
+                    for startups, local businesses,
+                    shops, clinics & brands.
+
+                  </p>
 
                 </div>
-
-                <p
-                  className="
-                    mt-5
-
-                    max-w-sm
-
-                    text-white/75
-
-                    leading-8
-
-                    text-sm
-                    sm:text-base
-                  "
-                >
-
-                  Average client engagement growth
-                  after working with our team.
-
-                </p>
 
               </div>
 
-            </div>
+              {/* FORM */}
 
-            {/* STATS */}
+              <form
+                onSubmit={handleSubmit}
 
-            <div
-              className="
-                mt-5
+                className="
+                  mt-6
 
-                grid
-                grid-cols-2
+                  space-y-4
+                "
+              >
 
-                gap-4
-              "
-            >
+                {/* NAME */}
 
-              {stats.map((item, index) => (
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
 
-                <motion.div
-                  key={index}
-
-                  whileHover={{
-                    y:-5
-                  }}
+                  value={formData.name}
+                  onChange={handleChange}
 
                   className="
-                    relative
-                    overflow-hidden
+                    w-full
 
-                    rounded-[24px]
+                    rounded-2xl
+
+                    px-5
+                    py-4
 
                     bg-white
 
                     border
-                    border-black/[0.05]
+                    border-gray-200
 
-                    p-4
-                    sm:p-6
+                    outline-none
+
+                    text-gray-900
+
+                    transition-all
+                    duration-300
+
+                    focus:border-violet-500
+                    focus:ring-4
+                    focus:ring-violet-100
                   "
+                />
 
+                {/* PHONE */}
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required
+
+                  value={formData.phone}
+                  onChange={handleChange}
+
+                  className="
+                    w-full
+
+                    rounded-2xl
+
+                    px-5
+                    py-4
+
+                    bg-white
+
+                    border
+                    border-gray-200
+
+                    outline-none
+
+                    text-gray-900
+
+                    transition-all
+                    duration-300
+
+                    focus:border-violet-500
+                    focus:ring-4
+                    focus:ring-violet-100
+                  "
+                />
+
+                {/* CITY */}
+
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City Name"
+                  required
+
+                  value={formData.city}
+                  onChange={handleChange}
+
+                  className="
+                    w-full
+
+                    rounded-2xl
+
+                    px-5
+                    py-4
+
+                    bg-white
+
+                    border
+                    border-gray-200
+
+                    outline-none
+
+                    text-gray-900
+
+                    transition-all
+                    duration-300
+
+                    focus:border-violet-500
+                    focus:ring-4
+                    focus:ring-violet-100
+                  "
+                />
+
+                {/* BUTTON */}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+
+                  className="
+                    w-full
+
+                    py-4
+
+                    rounded-2xl
+
+                    text-white
+
+                    font-bold
+
+                    text-[15px]
+
+                    transition-all
+                    duration-300
+
+                    hover:scale-[1.02]
+                  "
                   style={{
+                    background:
+                      "linear-gradient(135deg,#2563eb,#7c3aed)",
+
                     boxShadow:
-                      "0 10px 25px rgba(0,0,0,0.04)"
+                      "0 18px 40px rgba(99,102,241,0.18)",
                   }}
                 >
 
-                  {/* GLOW */}
+                  {loading
+                    ? "Submitting..."
+                    : "Get Website Now"}
 
-                  <div
-                    className={`
-                      absolute
-                      inset-0
+                </button>
 
-                      opacity-10
+              </form>
 
-                      bg-gradient-to-br
-                      ${item.gradient}
-                    `}
-                  />
+              {/* TRUST */}
 
-                  <div className="relative z-10">
+              <div
+                className="
+                  flex
+                  flex-wrap
 
-                    <div className="text-2xl">
-                      {item.icon}
-                    </div>
+                  justify-center
 
-                    <div
-                      className="
-                        mt-4
+                  gap-x-5
+                  gap-y-3
 
-                        text-2xl
-                        sm:text-4xl
+                  mt-6
 
-                        font-black
+                  text-xs
+                  sm:text-sm
 
-                        text-gray-900
-                      "
+                  text-gray-500
 
-                      style={{
-                        letterSpacing:"-0.05em"
-                      }}
-                    >
+                  font-medium
+                "
+              >
 
-                      {item.value}
+                <span>⚡ Fast Delivery</span>
 
-                    </div>
+                <span>📱 Fully Responsive</span>
 
-                    <div
-                      className="
-                        mt-2
+                <span>💰 Budget Friendly</span>
 
-                        text-xs
-                        sm:text-[15px]
-
-                        text-gray-500
-
-                        leading-5
-                        sm:leading-6
-                      "
-                    >
-
-                      {item.title}
-
-                    </div>
-
-                  </div>
-
-                </motion.div>
-
-              ))}
+              </div>
 
             </div>
 
