@@ -335,7 +335,7 @@ function Footer() {
 
           {/* CONTACT */}
 
-          <div>
+          <div id="contact-info">
 
             <h3
               className="

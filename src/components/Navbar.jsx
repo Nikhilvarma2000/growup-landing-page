@@ -203,7 +203,7 @@ function Navbar() {
         {/* RIGHT BUTTON */}
 
         <a
-          href="#footer"
+          href="#contact-info"
 
           className="
 
