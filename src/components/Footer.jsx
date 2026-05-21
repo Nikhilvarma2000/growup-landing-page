@@ -5,11 +5,18 @@ import {
 
 function Footer() {
 
+  const services = [
+    "Business Analysis",
+    "Marketing",
+    "Sales Strategies",
+    "Meta Ads",
+  ]
+
   return (
 
     <footer
 
-      id="contact-info"
+      id="footer"
 
       className="
         relative
@@ -84,7 +91,7 @@ function Footer() {
           relative
           z-10
 
-          max-w-[1100px]
+          max-w-[1450px]
           mx-auto
         "
       >
@@ -93,24 +100,21 @@ function Footer() {
 
         <div
           className="
-            flex
-            flex-col
-            lg:flex-row
+            grid
 
-            items-start
-            justify-between
+            grid-cols-1
+            sm:grid-cols-2
+            xl:grid-cols-3
 
-            gap-14
+            gap-12
+            sm:gap-14
+            lg:gap-16
           "
         >
 
-          {/* LEFT */}
+          {/* COMPANY */}
 
-          <div
-            className="
-              max-w-[500px]
-            "
-          >
+          <div>
 
             {/* LOGO */}
 
@@ -133,14 +137,13 @@ function Footer() {
                   rounded-2xl
 
                   overflow-hidden
+
+                  shadow-lg
                 "
 
                 style={{
                   background:
-                    "linear-gradient(135deg,#2563eb,#7c3aed)",
-
-                  boxShadow:
-                    "0 16px 40px rgba(124,58,237,0.35)"
+                    "linear-gradient(135deg,#2563eb,#7c3aed)"
                 }}
               >
 
@@ -165,11 +168,11 @@ function Footer() {
                     sm:text-3xl
 
                     font-black
+
+                    tracking-tight
                   "
                 >
-
                   Growup
-
                 </h2>
 
                 <p
@@ -182,38 +185,40 @@ function Footer() {
                     mt-1
                   "
                 >
-
                   Business Consultancy
-
                 </p>
 
               </div>
 
             </div>
 
-            {/* DESCRIPTION */}
+            {/* DESC */}
 
             <p
               className="
                 text-gray-400
 
-                mt-7
+                mt-6
+                sm:mt-7
 
-                leading-8
+                leading-7
+                sm:leading-8
 
                 text-sm
                 sm:text-[15px]
+
+                max-w-sm
               "
             >
 
-              We build premium modern websites
-              and help businesses grow faster
-              with digital marketing, Meta ads,
-              branding and lead generation solutions.
+              We help businesses scale faster
+              with affordable marketing,
+              lead generation, Meta ads,
+              and digital business solutions.
 
             </p>
 
-            {/* CTA */}
+            {/* BUTTON */}
 
             <a
               href="#contact"
@@ -225,9 +230,12 @@ function Footer() {
 
                 gap-3
 
-                mt-8
+                mt-7
+                sm:mt-8
 
-                px-6
+                px-5
+                sm:px-6
+
                 py-4
 
                 rounded-2xl
@@ -246,7 +254,7 @@ function Footer() {
                   "linear-gradient(135deg,#111827,#1f2937)",
 
                 boxShadow:
-                  "0 14px 35px rgba(0,0,0,0.35)"
+                  "0 14px 30px rgba(0,0,0,0.35)"
               }}
             >
 
@@ -258,27 +266,89 @@ function Footer() {
 
           </div>
 
-          {/* CONTACT */}
+          {/* SERVICES */}
 
-          <div
-            className="
-              w-full
-              max-w-[430px]
-            "
-          >
+          <div>
 
             <h3
               className="
-                text-2xl
+                text-lg
+                sm:text-xl
 
                 font-bold
 
-                mb-7
+                mb-6
+                sm:mb-8
+              "
+            >
+              Services
+            </h3>
+
+            <div
+              className="
+                flex
+                flex-col
+
+                gap-4
+                sm:gap-5
               "
             >
 
-              Contact Information
+              {services.map((service, index) => (
 
+                <div
+                  key={index}
+
+                  className="
+                    text-gray-400
+
+                    flex
+                    items-center
+
+                    gap-3
+
+                    text-sm
+                    sm:text-base
+                  "
+                >
+
+                  <div
+                    className="
+                      w-2
+                      h-2
+
+                      rounded-full
+
+                      bg-violet-500
+                    "
+                  />
+
+                  {service}
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </div>
+
+          {/* CONTACT */}
+
+          <div id="contact-info">
+
+            <h3
+              className="
+                text-lg
+                sm:text-xl
+
+                font-bold
+
+                mb-6
+                sm:mb-8
+              "
+            >
+              Contact
             </h3>
 
             <div
@@ -308,9 +378,7 @@ function Footer() {
                     mb-2
                   "
                 >
-
                   Email
-
                 </p>
 
                 <a
@@ -348,9 +416,7 @@ function Footer() {
                     mb-2
                   "
                 >
-
                   Phone
-
                 </p>
 
                 <a
@@ -388,9 +454,7 @@ function Footer() {
                     mb-2
                   "
                 >
-
                   Address
-
                 </p>
 
                 <p
@@ -414,7 +478,6 @@ function Footer() {
 
               <a
                 href="https://wa.me/919182986117"
-
                 target="_blank"
                 rel="noreferrer"
 
@@ -460,9 +523,11 @@ function Footer() {
 
         <div
           className="
-            mt-16
+            mt-14
+            sm:mt-20
 
-            mb-7
+            mb-6
+            sm:mb-8
 
             h-[1px]
             w-full
@@ -474,23 +539,38 @@ function Footer() {
           "
         />
 
-        {/* COPYRIGHT */}
+        {/* BOTTOM */}
 
-        <p
+        <div
           className="
-            text-gray-500
+            flex
+            flex-col
+            md:flex-row
 
-            text-xs
-            sm:text-sm
+            items-center
+            justify-center
 
-            text-center
+            gap-5
           "
         >
 
-          © 2026 Growup Business Consultancy.
-          All rights reserved.
+          <p
+            className="
+              text-gray-500
 
-        </p>
+              text-xs
+              sm:text-sm
+
+              text-center
+            "
+          >
+
+            © 2026 Growup Business Consultancy.
+            All rights reserved.
+
+          </p>
+
+        </div>
 
       </div>
 
