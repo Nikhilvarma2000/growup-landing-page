@@ -22,10 +22,12 @@ function Footer() {
 
         text-white
 
-        pt-20
-        sm:pt-24
+        pt-16
+        sm:pt-20
+        lg:pt-24
 
-        pb-10
+        pb-8
+        sm:pb-10
 
         px-4
         sm:px-6
@@ -40,8 +42,11 @@ function Footer() {
           top-[-120px]
           left-[-120px]
 
-          w-[320px]
-          h-[320px]
+          w-[220px]
+          sm:w-[320px]
+
+          h-[220px]
+          sm:h-[320px]
 
           rounded-full
 
@@ -62,7 +67,7 @@ function Footer() {
           relative
           z-10
 
-          max-w-[900px]
+          max-w-[950px]
           mx-auto
         "
       >
@@ -73,8 +78,10 @@ function Footer() {
 
           <h2
             className="
-              text-3xl
+              text-[2rem]
               sm:text-5xl
+
+              leading-tight
 
               font-black
             "
@@ -86,7 +93,8 @@ function Footer() {
 
           <p
             className="
-              mt-5
+              mt-4
+              sm:mt-5
 
               text-gray-400
 
@@ -94,6 +102,9 @@ function Footer() {
               sm:text-base
 
               leading-7
+
+              max-w-[650px]
+              mx-auto
             "
           >
 
@@ -108,12 +119,14 @@ function Footer() {
 
         <div
           className="
-            mt-12
+            mt-10
+            sm:mt-12
 
-            p-6
+            p-5
             sm:p-8
 
-            rounded-[32px]
+            rounded-[24px]
+            sm:rounded-[32px]
 
             border
             border-white/10
@@ -124,214 +137,275 @@ function Footer() {
           "
         >
 
-          {/* EMAIL */}
+          {/* CONTACT ITEMS */}
 
           <div
             className="
               flex
-              items-start
+              flex-col
 
-              gap-4
-
-              mb-8
+              gap-6
+              sm:gap-8
             "
           >
 
+            {/* EMAIL */}
+
             <div
               className="
-                w-12
-                h-12
-
-                rounded-2xl
-
                 flex
-                items-center
-                justify-center
 
-                bg-violet-600/20
+                items-start
+
+                gap-4
               "
             >
 
-              <FaEnvelope className="text-violet-400" />
+              <div
+                className="
+                  shrink-0
+
+                  w-11
+                  h-11
+
+                  sm:w-12
+                  sm:h-12
+
+                  rounded-2xl
+
+                  flex
+                  items-center
+                  justify-center
+
+                  bg-violet-600/20
+                "
+              >
+
+                <FaEnvelope
+                  className="
+                    text-violet-400
+
+                    text-sm
+                    sm:text-base
+                  "
+                />
+
+              </div>
+
+              <div className="min-w-0">
+
+                <p
+                  className="
+                    text-gray-500
+
+                    text-xs
+                    sm:text-sm
+
+                    mb-1.5
+                  "
+                >
+
+                  Email
+
+                </p>
+
+                <a
+                  href="mailto:growupbusinessconsultancy@gmail.com"
+
+                  className="
+                    text-white
+
+                    text-sm
+                    sm:text-base
+
+                    break-words
+
+                    font-semibold
+
+                    hover:text-violet-400
+
+                    transition-all
+                    duration-300
+                  "
+                >
+
+                  growupbusinessconsultancy@gmail.com
+
+                </a>
+
+              </div>
 
             </div>
 
-            <div>
+            {/* PHONE */}
 
-              <p
+            <div
+              className="
+                flex
+                items-start
+
+                gap-4
+              "
+            >
+
+              <div
                 className="
-                  text-gray-500
-                  text-sm
-                  mb-2
+                  shrink-0
+
+                  w-11
+                  h-11
+
+                  sm:w-12
+                  sm:h-12
+
+                  rounded-2xl
+
+                  flex
+                  items-center
+                  justify-center
+
+                  bg-blue-600/20
                 "
               >
 
-                Email
+                <FaPhoneAlt
+                  className="
+                    text-blue-400
 
-              </p>
+                    text-sm
+                    sm:text-base
+                  "
+                />
 
-              <a
-                href="mailto:growupbusinessconsultancy@gmail.com"
+              </div>
 
+              <div>
+
+                <p
+                  className="
+                    text-gray-500
+
+                    text-xs
+                    sm:text-sm
+
+                    mb-1.5
+                  "
+                >
+
+                  Phone
+
+                </p>
+
+                <a
+                  href="tel:+919182986117"
+
+                  className="
+                    text-white
+
+                    text-sm
+                    sm:text-base
+
+                    font-semibold
+
+                    hover:text-blue-400
+
+                    transition-all
+                    duration-300
+                  "
+                >
+
+                  +91 91829 86117
+
+                </a>
+
+              </div>
+
+            </div>
+
+            {/* ADDRESS */}
+
+            <div
+              className="
+                flex
+                items-start
+
+                gap-4
+              "
+            >
+
+              <div
                 className="
-                  text-white
+                  shrink-0
 
-                  text-sm
-                  sm:text-base
+                  w-11
+                  h-11
 
-                  font-semibold
+                  sm:w-12
+                  sm:h-12
 
-                  hover:text-violet-400
+                  rounded-2xl
 
-                  transition-all
-                  duration-300
+                  flex
+                  items-center
+                  justify-center
+
+                  bg-pink-600/20
                 "
               >
 
-                growupbusinessconsultancy@gmail.com
+                <FaMapMarkerAlt
+                  className="
+                    text-pink-400
 
-              </a>
+                    text-sm
+                    sm:text-base
+                  "
+                />
+
+              </div>
+
+              <div>
+
+                <p
+                  className="
+                    text-gray-500
+
+                    text-xs
+                    sm:text-sm
+
+                    mb-1.5
+                  "
+                >
+
+                  Address
+
+                </p>
+
+                <p
+                  className="
+                    text-white
+
+                    text-sm
+                    sm:text-base
+
+                    font-semibold
+
+                    leading-7
+                  "
+                >
+
+                  Pragathi Nagar,
+                  Hyderabad
+
+                </p>
+
+              </div>
 
             </div>
 
           </div>
 
-          {/* PHONE */}
-
-          <div
-            className="
-              flex
-              items-start
-
-              gap-4
-
-              mb-8
-            "
-          >
-
-            <div
-              className="
-                w-12
-                h-12
-
-                rounded-2xl
-
-                flex
-                items-center
-                justify-center
-
-                bg-blue-600/20
-              "
-            >
-
-              <FaPhoneAlt className="text-blue-400" />
-
-            </div>
-
-            <div>
-
-              <p
-                className="
-                  text-gray-500
-                  text-sm
-                  mb-2
-                "
-              >
-
-                Phone
-
-              </p>
-
-              <a
-                href="tel:+919182986117"
-
-                className="
-                  text-white
-
-                  text-sm
-                  sm:text-base
-
-                  font-semibold
-
-                  hover:text-blue-400
-
-                  transition-all
-                  duration-300
-                "
-              >
-
-                +91 91829 86117
-
-              </a>
-
-            </div>
-
-          </div>
-
-          {/* ADDRESS */}
-
-          <div
-            className="
-              flex
-              items-start
-
-              gap-4
-            "
-          >
-
-            <div
-              className="
-                w-12
-                h-12
-
-                rounded-2xl
-
-                flex
-                items-center
-                justify-center
-
-                bg-pink-600/20
-              "
-            >
-
-              <FaMapMarkerAlt className="text-pink-400" />
-
-            </div>
-
-            <div>
-
-              <p
-                className="
-                  text-gray-500
-                  text-sm
-                  mb-2
-                "
-              >
-
-                Address
-
-              </p>
-
-              <p
-                className="
-                  text-white
-
-                  text-sm
-                  sm:text-base
-
-                  font-semibold
-                "
-              >
-
-                Pragathi Nagar, Hyderabad
-
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* WHATSAPP */}
+          {/* BUTTON */}
 
           <a
             href="https://wa.me/919182986117"
@@ -340,9 +414,10 @@ function Footer() {
             rel="noreferrer"
 
             className="
-              mt-10
+              mt-8
+              sm:mt-10
 
-              inline-flex
+              flex
               items-center
               justify-center
 
@@ -350,7 +425,9 @@ function Footer() {
 
               w-full
 
-              px-6
+              px-5
+              sm:px-6
+
               py-4
 
               rounded-2xl
@@ -358,6 +435,9 @@ function Footer() {
               bg-green-600
 
               text-white
+
+              text-sm
+              sm:text-base
 
               font-bold
 
@@ -383,14 +463,17 @@ function Footer() {
 
         <p
           className="
-            mt-10
+            mt-8
+            sm:mt-10
 
             text-center
 
             text-gray-500
 
-            text-xs
+            text-[11px]
             sm:text-sm
+
+            leading-6
           "
         >
 
