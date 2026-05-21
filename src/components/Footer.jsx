@@ -1,22 +1,18 @@
 import {
   FaWhatsapp,
-  FaArrowRight
+  FaArrowRight,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt
 } from "react-icons/fa"
 
 function Footer() {
-
-  const services = [
-    "Business Analysis",
-    "Marketing",
-    "Sales Strategies",
-    "Meta Ads",
-  ]
 
   return (
 
     <footer
 
-      id="footer"
+      id="contact-info"
 
       className="
         relative
@@ -28,59 +24,34 @@ function Footer() {
 
         pt-20
         sm:pt-24
-        lg:pt-28
 
-        pb-8
-        sm:pb-10
+        pb-10
 
         px-4
         sm:px-6
       "
     >
 
-      {/* BLUR BG */}
+      {/* BACKGROUND GLOW */}
 
       <div
         className="
           absolute
-          top-[-150px]
+          top-[-120px]
           left-[-120px]
 
-          w-[280px]
-          sm:w-[420px]
-
-          h-[280px]
-          sm:h-[420px]
+          w-[320px]
+          h-[320px]
 
           rounded-full
+
           blur-3xl
           opacity-20
         "
+
         style={{
           background:
             "linear-gradient(135deg,#4f46e5,#7c3aed)"
-        }}
-      />
-
-      <div
-        className="
-          absolute
-          bottom-[-150px]
-          right-[-120px]
-
-          w-[280px]
-          sm:w-[420px]
-
-          h-[280px]
-          sm:h-[420px]
-
-          rounded-full
-          blur-3xl
-          opacity-20
-        "
-        style={{
-          background:
-            "linear-gradient(135deg,#06b6d4,#3b82f6)"
         }}
       />
 
@@ -91,425 +62,133 @@ function Footer() {
           relative
           z-10
 
-          max-w-[1450px]
+          max-w-[900px]
           mx-auto
         "
       >
 
-        {/* TOP */}
+        {/* TITLE */}
+
+        <div className="text-center">
+
+          <h2
+            className="
+              text-3xl
+              sm:text-5xl
+
+              font-black
+            "
+          >
+
+            Contact Information
+
+          </h2>
+
+          <p
+            className="
+              mt-5
+
+              text-gray-400
+
+              text-sm
+              sm:text-base
+
+              leading-7
+            "
+          >
+
+            Get in touch for premium websites,
+            business growth and digital marketing services.
+
+          </p>
+
+        </div>
+
+        {/* CARD */}
 
         <div
           className="
-            grid
+            mt-12
 
-            grid-cols-1
-            sm:grid-cols-2
-            xl:grid-cols-3
+            p-6
+            sm:p-8
 
-            gap-12
-            sm:gap-14
-            lg:gap-16
+            rounded-[32px]
+
+            border
+            border-white/10
+
+            bg-white/[0.04]
+
+            backdrop-blur-xl
           "
         >
 
-          {/* COMPANY */}
+          {/* EMAIL */}
 
-          <div>
+          <div
+            className="
+              flex
+              items-start
 
-            {/* LOGO */}
+              gap-4
+
+              mb-8
+            "
+          >
 
             <div
               className="
-                flex
-                items-center
-                gap-4
-              "
-            >
-
-              <div
-                className="
-                  w-12
-                  h-12
-
-                  sm:w-14
-                  sm:h-14
-
-                  rounded-2xl
-
-                  overflow-hidden
-
-                  shadow-lg
-                "
-
-                style={{
-                  background:
-                    "linear-gradient(135deg,#2563eb,#7c3aed)"
-                }}
-              >
-
-                <img
-                  src="/logo.png"
-                  alt="Growup Logo"
-
-                  className="
-                    w-full
-                    h-full
-                    object-cover
-                  "
-                />
-
-              </div>
-
-              <div>
-
-                <h2
-                  className="
-                    text-2xl
-                    sm:text-3xl
-
-                    font-black
-
-                    tracking-tight
-                  "
-                >
-                  Growup
-                </h2>
-
-                <p
-                  className="
-                    text-xs
-                    sm:text-sm
-
-                    text-gray-500
-
-                    mt-1
-                  "
-                >
-                  Business Consultancy
-                </p>
-
-              </div>
-
-            </div>
-
-            {/* DESC */}
-
-            <p
-              className="
-                text-gray-400
-
-                mt-6
-                sm:mt-7
-
-                leading-7
-                sm:leading-8
-
-                text-sm
-                sm:text-[15px]
-
-                max-w-sm
-              "
-            >
-
-              We help businesses scale faster
-              with affordable marketing,
-              lead generation, Meta ads,
-              and digital business solutions.
-
-            </p>
-
-            {/* BUTTON */}
-
-            <a
-              href="#contact"
-
-              className="
-                inline-flex
-                items-center
-                justify-center
-
-                gap-3
-
-                mt-7
-                sm:mt-8
-
-                px-5
-                sm:px-6
-
-                py-4
+                w-12
+                h-12
 
                 rounded-2xl
 
-                text-sm
-                font-semibold
-
-                transition-all
-                duration-300
-
-                hover:-translate-y-1
-              "
-
-              style={{
-                background:
-                  "linear-gradient(135deg,#111827,#1f2937)",
-
-                boxShadow:
-                  "0 14px 30px rgba(0,0,0,0.35)"
-              }}
-            >
-
-              Get Consultation
-
-              <FaArrowRight className="text-xs" />
-
-            </a>
-
-          </div>
-
-          {/* SERVICES */}
-
-          <div>
-
-            <h3
-              className="
-                text-lg
-                sm:text-xl
-
-                font-bold
-
-                mb-6
-                sm:mb-8
-              "
-            >
-              Services
-            </h3>
-
-            <div
-              className="
                 flex
-                flex-col
+                items-center
+                justify-center
 
-                gap-4
-                sm:gap-5
+                bg-violet-600/20
               "
             >
 
-              {services.map((service, index) => (
-
-                <div
-                  key={index}
-
-                  className="
-                    text-gray-400
-
-                    flex
-                    items-center
-
-                    gap-3
-
-                    text-sm
-                    sm:text-base
-                  "
-                >
-
-                  <div
-                    className="
-                      w-2
-                      h-2
-
-                      rounded-full
-
-                      bg-violet-500
-                    "
-                  />
-
-                  {service}
-
-                </div>
-
-              ))}
+              <FaEnvelope className="text-violet-400" />
 
             </div>
 
-          </div>
+            <div>
 
-          {/* CONTACT */}
+              <p
+                className="
+                  text-gray-500
+                  text-sm
+                  mb-2
+                "
+              >
 
-          <div id="contact-info">
+                Email
 
-            <h3
-              className="
-                text-lg
-                sm:text-xl
-
-                font-bold
-
-                mb-6
-                sm:mb-8
-              "
-            >
-              Contact
-            </h3>
-
-            <div
-              className="
-                p-6
-                sm:p-7
-
-                rounded-[30px]
-
-                border
-                border-white/10
-
-                bg-white/[0.04]
-
-                backdrop-blur-xl
-              "
-            >
-
-              {/* EMAIL */}
-
-              <div className="mb-6">
-
-                <p
-                  className="
-                    text-gray-500
-                    text-sm
-                    mb-2
-                  "
-                >
-                  Email
-                </p>
-
-                <a
-                  href="mailto:growupbusinessconsultancy@gmail.com"
-
-                  className="
-                    text-white
-
-                    text-sm
-                    sm:text-base
-
-                    font-medium
-
-                    hover:text-violet-400
-
-                    transition-all
-                    duration-300
-                  "
-                >
-
-                  growupbusinessconsultancy@gmail.com
-
-                </a>
-
-              </div>
-
-              {/* PHONE */}
-
-              <div className="mb-6">
-
-                <p
-                  className="
-                    text-gray-500
-                    text-sm
-                    mb-2
-                  "
-                >
-                  Phone
-                </p>
-
-                <a
-                  href="tel:+919182986117"
-
-                  className="
-                    text-white
-
-                    text-sm
-                    sm:text-base
-
-                    font-medium
-
-                    hover:text-violet-400
-
-                    transition-all
-                    duration-300
-                  "
-                >
-
-                  +91 91829 86117
-
-                </a>
-
-              </div>
-
-              {/* ADDRESS */}
-
-              <div>
-
-                <p
-                  className="
-                    text-gray-500
-                    text-sm
-                    mb-2
-                  "
-                >
-                  Address
-                </p>
-
-                <p
-                  className="
-                    text-white
-
-                    text-sm
-                    sm:text-base
-
-                    font-medium
-                  "
-                >
-
-                  Pragathi Nagar, Hyderabad
-
-                </p>
-
-              </div>
-
-              {/* WHATSAPP */}
+              </p>
 
               <a
-                href="https://wa.me/919182986117"
-                target="_blank"
-                rel="noreferrer"
+                href="mailto:growupbusinessconsultancy@gmail.com"
 
                 className="
-                  mt-7
-
-                  inline-flex
-                  items-center
-                  gap-3
-
-                  px-5
-                  py-4
-
-                  rounded-2xl
-
-                  bg-green-600
-
                   text-white
+
+                  text-sm
+                  sm:text-base
 
                   font-semibold
 
-                  hover:bg-green-500
-                  hover:-translate-y-1
+                  hover:text-violet-400
 
                   transition-all
                   duration-300
                 "
               >
 
-                <FaWhatsapp />
-
-                Chat On WhatsApp
+                growupbusinessconsultancy@gmail.com
 
               </a>
 
@@ -517,60 +196,208 @@ function Footer() {
 
           </div>
 
-        </div>
+          {/* PHONE */}
 
-        {/* DIVIDER */}
-
-        <div
-          className="
-            mt-14
-            sm:mt-20
-
-            mb-6
-            sm:mb-8
-
-            h-[1px]
-            w-full
-
-            bg-gradient-to-r
-            from-transparent
-            via-white/10
-            to-transparent
-          "
-        />
-
-        {/* BOTTOM */}
-
-        <div
-          className="
-            flex
-            flex-col
-            md:flex-row
-
-            items-center
-            justify-center
-
-            gap-5
-          "
-        >
-
-          <p
+          <div
             className="
-              text-gray-500
+              flex
+              items-start
 
-              text-xs
-              sm:text-sm
+              gap-4
 
-              text-center
+              mb-8
             "
           >
 
-            © 2026 Growup Business Consultancy.
-            All rights reserved.
+            <div
+              className="
+                w-12
+                h-12
 
-          </p>
+                rounded-2xl
+
+                flex
+                items-center
+                justify-center
+
+                bg-blue-600/20
+              "
+            >
+
+              <FaPhoneAlt className="text-blue-400" />
+
+            </div>
+
+            <div>
+
+              <p
+                className="
+                  text-gray-500
+                  text-sm
+                  mb-2
+                "
+              >
+
+                Phone
+
+              </p>
+
+              <a
+                href="tel:+919182986117"
+
+                className="
+                  text-white
+
+                  text-sm
+                  sm:text-base
+
+                  font-semibold
+
+                  hover:text-blue-400
+
+                  transition-all
+                  duration-300
+                "
+              >
+
+                +91 91829 86117
+
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* ADDRESS */}
+
+          <div
+            className="
+              flex
+              items-start
+
+              gap-4
+            "
+          >
+
+            <div
+              className="
+                w-12
+                h-12
+
+                rounded-2xl
+
+                flex
+                items-center
+                justify-center
+
+                bg-pink-600/20
+              "
+            >
+
+              <FaMapMarkerAlt className="text-pink-400" />
+
+            </div>
+
+            <div>
+
+              <p
+                className="
+                  text-gray-500
+                  text-sm
+                  mb-2
+                "
+              >
+
+                Address
+
+              </p>
+
+              <p
+                className="
+                  text-white
+
+                  text-sm
+                  sm:text-base
+
+                  font-semibold
+                "
+              >
+
+                Pragathi Nagar, Hyderabad
+
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* WHATSAPP */}
+
+          <a
+            href="https://wa.me/919182986117"
+
+            target="_blank"
+            rel="noreferrer"
+
+            className="
+              mt-10
+
+              inline-flex
+              items-center
+              justify-center
+
+              gap-3
+
+              w-full
+
+              px-6
+              py-4
+
+              rounded-2xl
+
+              bg-green-600
+
+              text-white
+
+              font-bold
+
+              hover:bg-green-500
+              hover:-translate-y-1
+
+              transition-all
+              duration-300
+            "
+          >
+
+            <FaWhatsapp />
+
+            Chat On WhatsApp
+
+            <FaArrowRight className="text-xs" />
+
+          </a>
 
         </div>
+
+        {/* COPYRIGHT */}
+
+        <p
+          className="
+            mt-10
+
+            text-center
+
+            text-gray-500
+
+            text-xs
+            sm:text-sm
+          "
+        >
+
+          © 2026 Growup Business Consultancy.
+          All rights reserved.
+
+        </p>
 
       </div>
 
