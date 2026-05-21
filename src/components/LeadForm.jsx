@@ -261,25 +261,79 @@ function LeadForm() {
 
                 </div>
 
-                <h3
-                  className="
-                    text-3xl
-                    sm:text-4xl
+                <div className="flex flex-col items-center">
 
-                    font-black
+  {/* OFFER BADGE */}
 
-                    text-gray-900
+  <div
+    className="
+      inline-flex
+      items-center
+      gap-2
 
-                    leading-tight
-                  "
-                  style={{
-                    letterSpacing:"-0.05em"
-                  }}
-                >
+      px-5
+      py-2
 
-                  Get Free Consultation
+      rounded-full
 
-                </h3>
+      text-sm
+      font-bold
+
+      mb-5
+    "
+    style={{
+      background:
+        "linear-gradient(135deg,#dcfce7,#bbf7d0)",
+      color:"#166534",
+      border:"1px solid #86efac"
+    }}
+  >
+
+    🔥 Limited Time Offer
+
+  </div>
+
+  {/* HEADING */}
+
+  <h3
+    className="
+      text-3xl
+      sm:text-5xl
+
+      font-black
+
+      text-center
+
+      leading-tight
+    "
+    style={{
+      letterSpacing:"-0.05em",
+      color:"#111827"
+    }}
+  >
+
+    Websites Only At
+
+    <span
+      className="
+        block
+        mt-2
+      "
+      style={{
+        background:
+          "linear-gradient(90deg,#6366f1,#8b5cf6)",
+        WebkitBackgroundClip:"text",
+        WebkitTextFillColor:"transparent"
+      }}
+    >
+
+      ₹1999
+
+    </span>
+
+  </h3>
+
+</div>
 
                 <p
                   className="

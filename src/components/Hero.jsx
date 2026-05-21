@@ -275,8 +275,7 @@ export default function Hero() {
               }}
             >
 
-              Smart Digital Growth
-
+GrowUp
             </span>
 
           </h1>

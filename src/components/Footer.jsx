@@ -5,13 +5,6 @@ import {
 
 function Footer() {
 
-  const links = [
-    { label: "Home", href: "#" },
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Reviews", href: "#reviews" },
-  ]
-
   const services = [
     "Business Analysis",
     "Marketing",
@@ -108,7 +101,7 @@ function Footer() {
 
             grid-cols-1
             sm:grid-cols-2
-            xl:grid-cols-4
+            xl:grid-cols-3
 
             gap-12
             sm:gap-14
@@ -217,7 +210,8 @@ function Footer() {
 
               We help businesses scale faster
               with affordable marketing,
-              lead generation, and digital solutions.
+              lead generation, Meta ads,
+              and digital business solutions.
 
             </p>
 
@@ -261,72 +255,11 @@ function Footer() {
               }}
             >
 
-              Free Consultation
+              Get Consultation
 
               <FaArrowRight className="text-xs" />
 
             </a>
-
-          </div>
-
-          {/* QUICK LINKS */}
-
-          <div>
-
-            <h3
-              className="
-                text-lg
-                sm:text-xl
-
-                font-bold
-
-                mb-6
-                sm:mb-8
-              "
-            >
-              Quick Links
-            </h3>
-
-            <div
-              className="
-                flex
-                flex-col
-
-                gap-4
-                sm:gap-5
-              "
-            >
-
-              {links.map((item, index) => (
-
-                <a
-                  key={index}
-                  href={item.href}
-
-                  className="
-                    text-gray-400
-
-                    hover:text-white
-
-                    transition-all
-                    duration-300
-
-                    hover:translate-x-1
-
-                    text-sm
-                    sm:text-base
-
-                    w-fit
-                  "
-                >
-
-                  {item.label}
-
-                </a>
-
-              ))}
-
-            </div>
 
           </div>
 
@@ -415,34 +348,12 @@ function Footer() {
               Contact
             </h3>
 
-            <p
-              className="
-                text-gray-400
-
-                leading-7
-                sm:leading-8
-
-                text-sm
-                sm:text-[15px]
-              "
-            >
-
-              Contact our team to scale
-              your business faster 🚀
-
-            </p>
-
-            {/* CONTACT CARD */}
-
             <div
               className="
-                mt-7
-                sm:mt-8
+                p-6
+                sm:p-7
 
-                p-5
-                sm:p-6
-
-                rounded-[28px]
+                rounded-[30px]
 
                 border
                 border-white/10
@@ -453,72 +364,151 @@ function Footer() {
               "
             >
 
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-4
-                "
-              >
+              {/* EMAIL */}
 
-                {/* WHATSAPP */}
+              <div className="mb-6">
+
+                <p
+                  className="
+                    text-gray-500
+                    text-sm
+                    mb-2
+                  "
+                >
+                  Email
+                </p>
 
                 <a
-                  href="https://wa.me/9182986117"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="mailto:growupbusinessconsultancy@gmail.com"
 
                   className="
-                    w-14
-                    h-14
+                    text-white
 
-                    rounded-2xl
+                    text-sm
+                    sm:text-base
 
-                    bg-white/5
+                    font-medium
 
-                    flex
-                    items-center
-                    justify-center
-
-                    hover:bg-green-600
+                    hover:text-violet-400
 
                     transition-all
                     duration-300
-
-                    hover:-translate-y-1
                   "
                 >
 
-                  <FaWhatsapp className="text-lg" />
+                  growupbusinessconsultancy@gmail.com
 
                 </a>
 
-                <div>
+              </div>
 
-                  <div
-                    className="
-                      text-white
-                      font-semibold
-                    "
-                  >
-                    WhatsApp Support
-                  </div>
+              {/* PHONE */}
 
-                  <div
-                    className="
-                      text-gray-500
+              <div className="mb-6">
 
-                      text-sm
+                <p
+                  className="
+                    text-gray-500
+                    text-sm
+                    mb-2
+                  "
+                >
+                  Phone
+                </p>
 
-                      mt-1
-                    "
-                  >
-                    Quick response support
-                  </div>
+                <a
+                  href="tel:+919182986117"
 
-                </div>
+                  className="
+                    text-white
+
+                    text-sm
+                    sm:text-base
+
+                    font-medium
+
+                    hover:text-violet-400
+
+                    transition-all
+                    duration-300
+                  "
+                >
+
+                  +91 91829 86117
+
+                </a>
 
               </div>
+
+              {/* ADDRESS */}
+
+              <div>
+
+                <p
+                  className="
+                    text-gray-500
+                    text-sm
+                    mb-2
+                  "
+                >
+                  Address
+                </p>
+
+                <p
+                  className="
+                    text-white
+
+                    text-sm
+                    sm:text-base
+
+                    font-medium
+                  "
+                >
+
+                  Pragathi Nagar, Hyderabad
+
+                </p>
+
+              </div>
+
+              {/* WHATSAPP */}
+
+              <a
+                href="https://wa.me/919182986117"
+                target="_blank"
+                rel="noreferrer"
+
+                className="
+                  mt-7
+
+                  inline-flex
+                  items-center
+                  gap-3
+
+                  px-5
+                  py-4
+
+                  rounded-2xl
+
+                  bg-green-600
+
+                  text-white
+
+                  font-semibold
+
+                  hover:bg-green-500
+                  hover:-translate-y-1
+
+                  transition-all
+                  duration-300
+                "
+              >
+
+                <FaWhatsapp />
+
+                Chat On WhatsApp
+
+              </a>
 
             </div>
 
@@ -555,7 +545,7 @@ function Footer() {
             md:flex-row
 
             items-center
-            justify-between
+            justify-center
 
             gap-5
           "
@@ -569,7 +559,6 @@ function Footer() {
               sm:text-sm
 
               text-center
-              md:text-left
             "
           >
 
@@ -577,45 +566,6 @@ function Footer() {
             All rights reserved.
 
           </p>
-
-          <div
-            className="
-              flex
-              items-center
-
-              gap-5
-              sm:gap-6
-
-              text-xs
-              sm:text-sm
-
-              text-gray-500
-            "
-          >
-
-            <a
-              href="#"
-
-              className="
-                hover:text-white
-                transition
-              "
-            >
-              Privacy Policy
-            </a>
-
-            <a
-              href="#"
-
-              className="
-                hover:text-white
-                transition
-              "
-            >
-              Terms
-            </a>
-
-          </div>
 
         </div>
 
