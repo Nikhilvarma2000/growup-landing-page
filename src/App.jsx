@@ -35,8 +35,8 @@ const floatStyles = `
   from {
     opacity:0;
     transform:
-      translateY(120px)
-      scale(.92);
+      translateY(100px)
+      scale(.9);
   }
 
   to {
@@ -44,25 +44,6 @@ const floatStyles = `
     transform:
       translateY(0)
       scale(1);
-  }
-}
-
-@keyframes pulseGlow {
-
-  0%,100% {
-
-    box-shadow:
-      0 0 20px rgba(96,165,250,.18),
-      0 0 50px rgba(168,85,247,.18),
-      0 15px 60px rgba(0,0,0,.45);
-  }
-
-  50% {
-
-    box-shadow:
-      0 0 35px rgba(96,165,250,.28),
-      0 0 80px rgba(168,85,247,.28),
-      0 15px 80px rgba(0,0,0,.55);
   }
 }
 
@@ -75,7 +56,24 @@ const floatStyles = `
 
   50% {
     transform:scale(.7);
-    opacity:.5;
+    opacity:.4;
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,100% {
+
+    box-shadow:
+      0 0 20px rgba(96,165,250,.12),
+      0 10px 40px rgba(0,0,0,.4);
+  }
+
+  50% {
+
+    box-shadow:
+      0 0 35px rgba(192,132,252,.18),
+      0 10px 55px rgba(0,0,0,.5);
   }
 }
 
@@ -93,16 +91,14 @@ const floatStyles = `
 .floating-enter {
 
   animation:
-    slideUp .8s cubic-bezier(.34,1.56,.64,1) both;
+    slideUp .7s cubic-bezier(.34,1.56,.64,1) both;
 }
 
-.ultra-border {
-
-  position:relative;
+.floating-border {
 
   padding:2px;
 
-  border-radius:24px;
+  border-radius:20px;
 
   background:
     conic-gradient(
@@ -110,52 +106,51 @@ const floatStyles = `
       #60a5fa,
       #8b5cf6,
       #c084fc,
-      #ffffff,
       #60a5fa
     );
 
   animation:
-    borderRotate 7s linear infinite;
+    borderRotate 6s linear infinite;
 }
 
-.ultra-card {
+.floating-card {
 
   animation:
-    pulseGlow 3s ease-in-out infinite;
+    glowPulse 3s ease-in-out infinite;
 }
 
 .live-dot {
 
   animation:
-    pulseDot 1.4s ease infinite;
+    pulseDot 1.3s ease infinite;
 }
 
-.cta-button {
+.cta-btn {
 
   transition:
     all .35s cubic-bezier(.34,1.56,.64,1);
 }
 
-.cta-button:hover {
+.cta-btn:hover {
 
   transform:
-    translateY(-3px)
+    translateY(-2px)
     scale(1.03);
 }
 
-.cta-button:hover .shine {
+.cta-btn:hover .shine {
 
   animation:
-    shineMove .8s ease forwards;
+    shineMove .7s ease forwards;
 }
 
 .close-btn:hover {
 
-  background:
-    rgba(255,255,255,.15) !important;
-
   transform:
     rotate(90deg);
+
+  background:
+    rgba(255,255,255,.15) !important;
 }
 
 @media(max-width:640px){
@@ -165,7 +160,7 @@ const floatStyles = `
     align-items:stretch !important;
   }
 
-  .floating-button{
+  .floating-btn{
     width:100%;
     max-width:100% !important;
   }
@@ -193,11 +188,12 @@ function FloatingBar() {
 
   }, [])
 
-  /* BUTTON CLICK */
+  /* CONSULT BUTTON */
 
   const handleConsultation = () => {
 
-    /* CLOSE BAR */
+    /* BOX VANISH */
+
     setClosed(true)
 
     /* SCROLL TO FORM */
@@ -206,15 +202,19 @@ function FloatingBar() {
 
     if(form){
 
-      form.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      })
+      setTimeout(() => {
+
+        form.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        })
+
+      }, 150)
 
     }
   }
 
-  if (!show || closed) return null
+  if(!show || closed) return null
 
   return (
 
@@ -229,27 +229,27 @@ function FloatingBar() {
 
         z-50
 
-        w-[94%]
-        sm:w-[90%]
+        w-[92%]
+        sm:w-[88%]
 
-        max-w-5xl
+        max-w-4xl
       "
     >
 
-      <div className="ultra-border">
+      <div className="floating-border">
 
         <div
-          className="ultra-card"
+          className="floating-card"
 
           style={{
             position:"relative",
 
             overflow:"hidden",
 
-            borderRadius:"22px",
+            borderRadius:"18px",
 
             background:
-              "linear-gradient(135deg,rgba(15,23,42,.97),rgba(76,29,149,.96))",
+              "linear-gradient(135deg,rgba(15,23,42,.96),rgba(76,29,149,.95))",
 
             backdropFilter:"blur(20px)",
 
@@ -257,39 +257,21 @@ function FloatingBar() {
           }}
         >
 
-          {/* AMBIENT GLOW */}
+          {/* GLOW */}
 
           <div
             style={{
               position:"absolute",
-              top:"-100px",
-              left:"-100px",
+              top:"-80px",
+              left:"-80px",
 
-              width:"220px",
-              height:"220px",
-
-              borderRadius:"50%",
-
-              background:
-                "radial-gradient(circle,rgba(96,165,250,.22),transparent 70%)",
-
-              filter:"blur(20px)"
-            }}
-          />
-
-          <div
-            style={{
-              position:"absolute",
-              bottom:"-100px",
-              right:"-80px",
-
-              width:"220px",
-              height:"220px",
+              width:"180px",
+              height:"180px",
 
               borderRadius:"50%",
 
               background:
-                "radial-gradient(circle,rgba(192,132,252,.20),transparent 70%)",
+                "radial-gradient(circle,rgba(96,165,250,.18),transparent 70%)",
 
               filter:"blur(20px)"
             }}
@@ -306,11 +288,11 @@ function FloatingBar() {
             style={{
               position:"absolute",
 
-              top:"10px",
-              right:"10px",
+              top:"8px",
+              right:"8px",
 
-              width:"30px",
-              height:"30px",
+              width:"28px",
+              height:"28px",
 
               borderRadius:"50%",
 
@@ -320,7 +302,7 @@ function FloatingBar() {
 
               color:"#fff",
 
-              fontSize:"15px",
+              fontSize:"14px",
 
               cursor:"pointer",
 
@@ -334,7 +316,7 @@ function FloatingBar() {
 
           </button>
 
-          {/* MAIN CONTENT */}
+          {/* CONTENT */}
 
           <div
             className="
@@ -351,14 +333,13 @@ function FloatingBar() {
               gap-4
 
               px-4
-              sm:px-6
-              lg:px-7
+              sm:px-5
 
-              py-4
+              py-3.5
             "
           >
 
-            {/* LEFT SIDE */}
+            {/* LEFT */}
 
             <div
               className="
@@ -379,9 +360,9 @@ function FloatingBar() {
                 style={{
                   display:"inline-flex",
                   alignItems:"center",
-                  gap:"7px",
+                  gap:"6px",
 
-                  padding:"6px 12px",
+                  padding:"5px 10px",
 
                   borderRadius:"999px",
 
@@ -389,7 +370,7 @@ function FloatingBar() {
 
                   border:"1px solid rgba(255,255,255,.06)",
 
-                  marginBottom:"10px"
+                  marginBottom:"8px"
                 }}
               >
 
@@ -397,8 +378,8 @@ function FloatingBar() {
                   className="live-dot"
 
                   style={{
-                    width:"7px",
-                    height:"7px",
+                    width:"6px",
+                    height:"6px",
 
                     borderRadius:"50%",
 
@@ -408,9 +389,9 @@ function FloatingBar() {
 
                 <span
                   style={{
-                    color:"rgba(255,255,255,.85)",
+                    color:"rgba(255,255,255,.82)",
 
-                    fontSize:"10px",
+                    fontSize:"9px",
 
                     fontWeight:800,
 
@@ -418,7 +399,7 @@ function FloatingBar() {
                   }}
                 >
 
-                  LIMITED TIME OFFER
+                  LIMITED OFFER
 
                 </span>
 
@@ -430,7 +411,7 @@ function FloatingBar() {
                 style={{
                   margin:0,
 
-                  fontSize:"clamp(22px,5vw,42px)",
+                  fontSize:"clamp(18px,4vw,34px)",
 
                   fontWeight:900,
 
@@ -454,41 +435,20 @@ function FloatingBar() {
 
               </h2>
 
-              {/* SUBTEXT */}
-
-              <p
-                style={{
-                  marginTop:"8px",
-                  marginBottom:0,
-
-                  color:"rgba(255,255,255,.65)",
-
-                  fontSize:"12px",
-
-                  lineHeight:1.6,
-
-                  fontWeight:500
-                }}
-              >
-
-                Responsive • SEO Ready • Premium Design
-
-              </p>
-
             </div>
 
             {/* BUTTON */}
 
             <div
               className="
-                floating-button
+                floating-btn
 
                 w-full
                 sm:w-auto
               "
 
               style={{
-                maxWidth:"210px"
+                maxWidth:"190px"
               }}
             >
 
@@ -497,19 +457,19 @@ function FloatingBar() {
                 onClick={handleConsultation}
 
                 className="
-                  cta-button
+                  cta-btn
 
                   relative
                   overflow-hidden
 
                   w-full
 
-                  px-6
-                  sm:px-7
+                  px-5
+                  sm:px-6
 
-                  py-3.5
+                  py-3
 
-                  rounded-[18px]
+                  rounded-[15px]
 
                   border-0
 
@@ -518,7 +478,6 @@ function FloatingBar() {
                   font-black
 
                   text-sm
-                  sm:text-[15px]
 
                   text-black
                 "
@@ -546,7 +505,7 @@ function FloatingBar() {
                     transform:"skewX(-20deg)",
 
                     background:
-                      "linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent)"
+                      "linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent)"
                   }}
                 />
 
@@ -585,7 +544,7 @@ function App() {
 
     <div className="relative overflow-hidden bg-white">
 
-      {/* GLOBAL STYLES */}
+      {/* STYLES */}
 
       <style>{floatStyles}</style>
 
