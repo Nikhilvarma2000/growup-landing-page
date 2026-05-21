@@ -10,7 +10,7 @@ import LeadForm from "./components/LeadForm"
 import Footer from "./components/Footer"
 
 /* ───────────────────────────────────────────── */
-/* ULTRA PREMIUM FLOATING BAR STYLES */
+/* FLOATING BAR STYLES */
 /* ───────────────────────────────────────────── */
 
 const floatStyles = `
@@ -24,6 +24,7 @@ const floatStyles = `
 }
 
 @keyframes borderRotate {
+
   to {
     --angle: 360deg;
   }
@@ -51,21 +52,21 @@ const floatStyles = `
   0%,100% {
 
     box-shadow:
-      0 0 25px rgba(96,165,250,.18),
-      0 0 60px rgba(168,85,247,.18),
-      0 20px 80px rgba(0,0,0,.45);
+      0 0 20px rgba(96,165,250,.18),
+      0 0 50px rgba(168,85,247,.18),
+      0 15px 60px rgba(0,0,0,.45);
   }
 
   50% {
 
     box-shadow:
-      0 0 40px rgba(96,165,250,.32),
-      0 0 100px rgba(168,85,247,.32),
-      0 20px 90px rgba(0,0,0,.55);
+      0 0 35px rgba(96,165,250,.28),
+      0 0 80px rgba(168,85,247,.28),
+      0 15px 80px rgba(0,0,0,.55);
   }
 }
 
-@keyframes livePulse {
+@keyframes pulseDot {
 
   0%,100% {
     transform:scale(1);
@@ -74,7 +75,7 @@ const floatStyles = `
 
   50% {
     transform:scale(.7);
-    opacity:.4;
+    opacity:.5;
   }
 }
 
@@ -90,6 +91,7 @@ const floatStyles = `
 }
 
 .floating-enter {
+
   animation:
     slideUp .8s cubic-bezier(.34,1.56,.64,1) both;
 }
@@ -100,7 +102,7 @@ const floatStyles = `
 
   padding:2px;
 
-  border-radius:28px;
+  border-radius:24px;
 
   background:
     conic-gradient(
@@ -122,6 +124,12 @@ const floatStyles = `
     pulseGlow 3s ease-in-out infinite;
 }
 
+.live-dot {
+
+  animation:
+    pulseDot 1.4s ease infinite;
+}
+
 .cta-button {
 
   transition:
@@ -131,24 +139,20 @@ const floatStyles = `
 .cta-button:hover {
 
   transform:
-    translateY(-4px)
-    scale(1.04);
+    translateY(-3px)
+    scale(1.03);
 }
 
 .cta-button:hover .shine {
+
   animation:
     shineMove .8s ease forwards;
-}
-
-.live-dot {
-  animation:
-    livePulse 1.4s ease infinite;
 }
 
 .close-btn:hover {
 
   background:
-    rgba(255,255,255,.16) !important;
+    rgba(255,255,255,.15) !important;
 
   transform:
     rotate(90deg);
@@ -189,6 +193,27 @@ function FloatingBar() {
 
   }, [])
 
+  /* BUTTON CLICK */
+
+  const handleConsultation = () => {
+
+    /* CLOSE BAR */
+    setClosed(true)
+
+    /* SCROLL TO FORM */
+
+    const form = document.getElementById("contact")
+
+    if(form){
+
+      form.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      })
+
+    }
+  }
+
   if (!show || closed) return null
 
   return (
@@ -198,16 +223,16 @@ function FloatingBar() {
         floating-enter
 
         fixed
-        bottom-3
+        bottom-2
         left-1/2
         -translate-x-1/2
 
         z-50
 
-        w-[95%]
-        sm:w-[92%]
+        w-[94%]
+        sm:w-[90%]
 
-        max-w-7xl
+        max-w-5xl
       "
     >
 
@@ -221,69 +246,52 @@ function FloatingBar() {
 
             overflow:"hidden",
 
-            borderRadius:"26px",
+            borderRadius:"22px",
 
             background:
-              "linear-gradient(135deg,rgba(15,23,42,.97),rgba(76,29,149,.96),rgba(15,23,42,.98))",
+              "linear-gradient(135deg,rgba(15,23,42,.97),rgba(76,29,149,.96))",
 
-            backdropFilter:"blur(25px)",
+            backdropFilter:"blur(20px)",
 
             fontFamily:"'Manrope',sans-serif"
           }}
         >
 
-          {/* AMBIENT GLOWS */}
+          {/* AMBIENT GLOW */}
 
           <div
             style={{
               position:"absolute",
-              top:"-140px",
-              left:"-120px",
+              top:"-100px",
+              left:"-100px",
 
-              width:"320px",
-              height:"320px",
+              width:"220px",
+              height:"220px",
 
               borderRadius:"50%",
 
               background:
-                "radial-gradient(circle,rgba(96,165,250,.28),transparent 70%)",
+                "radial-gradient(circle,rgba(96,165,250,.22),transparent 70%)",
 
-              filter:"blur(25px)"
+              filter:"blur(20px)"
             }}
           />
 
           <div
             style={{
               position:"absolute",
-              bottom:"-140px",
-              right:"-100px",
+              bottom:"-100px",
+              right:"-80px",
 
-              width:"320px",
-              height:"320px",
+              width:"220px",
+              height:"220px",
 
               borderRadius:"50%",
 
               background:
-                "radial-gradient(circle,rgba(192,132,252,.25),transparent 70%)",
+                "radial-gradient(circle,rgba(192,132,252,.20),transparent 70%)",
 
-              filter:"blur(25px)"
-            }}
-          />
-
-          {/* GRID OVERLAY */}
-
-          <div
-            style={{
-              position:"absolute",
-              inset:0,
-
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px)",
-
-              backgroundSize:"40px 40px",
-
-              maskImage:
-                "linear-gradient(to bottom,transparent,black 20%,black 80%,transparent)"
+              filter:"blur(20px)"
             }}
           />
 
@@ -298,11 +306,11 @@ function FloatingBar() {
             style={{
               position:"absolute",
 
-              top:"12px",
-              right:"12px",
+              top:"10px",
+              right:"10px",
 
-              width:"36px",
-              height:"36px",
+              width:"30px",
+              height:"30px",
 
               borderRadius:"50%",
 
@@ -312,15 +320,13 @@ function FloatingBar() {
 
               color:"#fff",
 
-              fontSize:"18px",
+              fontSize:"15px",
 
               cursor:"pointer",
 
               zIndex:50,
 
-              transition:".35s ease",
-
-              backdropFilter:"blur(10px)"
+              transition:".35s ease"
             }}
           >
 
@@ -342,14 +348,13 @@ function FloatingBar() {
               items-center
               justify-between
 
-              gap-6
+              gap-4
 
-              px-5
-              sm:px-8
-              lg:px-10
+              px-4
+              sm:px-6
+              lg:px-7
 
-              py-5
-              sm:py-6
+              py-4
             "
           >
 
@@ -368,25 +373,23 @@ function FloatingBar() {
               "
             >
 
-              {/* LIVE OFFER */}
+              {/* BADGE */}
 
               <div
                 style={{
                   display:"inline-flex",
                   alignItems:"center",
-                  gap:"8px",
+                  gap:"7px",
 
-                  padding:"7px 14px",
+                  padding:"6px 12px",
 
                   borderRadius:"999px",
 
                   background:"rgba(255,255,255,.08)",
 
-                  border:"1px solid rgba(255,255,255,.08)",
+                  border:"1px solid rgba(255,255,255,.06)",
 
-                  marginBottom:"14px",
-
-                  backdropFilter:"blur(10px)"
+                  marginBottom:"10px"
                 }}
               >
 
@@ -394,8 +397,8 @@ function FloatingBar() {
                   className="live-dot"
 
                   style={{
-                    width:"8px",
-                    height:"8px",
+                    width:"7px",
+                    height:"7px",
 
                     borderRadius:"50%",
 
@@ -405,9 +408,9 @@ function FloatingBar() {
 
                 <span
                   style={{
-                    color:"rgba(255,255,255,.88)",
+                    color:"rgba(255,255,255,.85)",
 
-                    fontSize:"11px",
+                    fontSize:"10px",
 
                     fontWeight:800,
 
@@ -421,19 +424,19 @@ function FloatingBar() {
 
               </div>
 
-              {/* MAIN HEADING */}
+              {/* HEADING */}
 
               <h2
                 style={{
                   margin:0,
 
-                  fontSize:"clamp(28px,6vw,62px)",
+                  fontSize:"clamp(22px,5vw,42px)",
 
                   fontWeight:900,
 
-                  lineHeight:1,
+                  lineHeight:1.05,
 
-                  letterSpacing:"-0.05em",
+                  letterSpacing:"-0.04em",
 
                   background:
                     "linear-gradient(90deg,#60a5fa,#c084fc,#ffffff)",
@@ -455,48 +458,44 @@ function FloatingBar() {
 
               <p
                 style={{
-                  marginTop:"12px",
+                  marginTop:"8px",
                   marginBottom:0,
 
-                  color:"rgba(255,255,255,.68)",
+                  color:"rgba(255,255,255,.65)",
 
-                  fontSize:"13px",
+                  fontSize:"12px",
 
-                  lineHeight:1.8,
+                  lineHeight:1.6,
 
                   fontWeight:500
                 }}
               >
 
-                Premium UI • Responsive • SEO Ready • Fast Delivery • Modern Design
+                Responsive • SEO Ready • Premium Design
 
               </p>
 
             </div>
 
-            {/* RIGHT BUTTON */}
+            {/* BUTTON */}
 
-            <a
-              href="#contact"
-
+            <div
               className="
                 floating-button
-
-                relative
-                z-10
 
                 w-full
                 sm:w-auto
               "
 
               style={{
-                textDecoration:"none",
-
-                maxWidth:"250px"
+                maxWidth:"210px"
               }}
             >
 
               <button
+
+                onClick={handleConsultation}
+
                 className="
                   cta-button
 
@@ -505,13 +504,12 @@ function FloatingBar() {
 
                   w-full
 
-                  px-8
-                  sm:px-10
+                  px-6
+                  sm:px-7
 
-                  py-4
-                  sm:py-5
+                  py-3.5
 
-                  rounded-[20px]
+                  rounded-[18px]
 
                   border-0
 
@@ -520,7 +518,7 @@ function FloatingBar() {
                   font-black
 
                   text-sm
-                  sm:text-base
+                  sm:text-[15px]
 
                   text-black
                 "
@@ -531,7 +529,7 @@ function FloatingBar() {
                 }}
               >
 
-                {/* SHINE EFFECT */}
+                {/* SHINE */}
 
                 <div
                   className="shine"
@@ -559,13 +557,13 @@ function FloatingBar() {
                   }}
                 >
 
-                  Consult Now 🚀
+                  Get Consultation 🚀
 
                 </span>
 
               </button>
 
-            </a>
+            </div>
 
           </div>
 
