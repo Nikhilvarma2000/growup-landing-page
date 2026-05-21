@@ -15,6 +15,9 @@ function Footer() {
   return (
 
     <footer
+
+      id="footer"
+
       className="
         relative
         overflow-hidden

@@ -415,23 +415,66 @@ function FloatingBar() {
 
                   fontWeight:900,
 
-                  lineHeight:1.05,
+                  lineHeight:1.1,
 
                   letterSpacing:"-0.04em",
 
-                  background:
-                    "linear-gradient(90deg,#60a5fa,#c084fc,#ffffff)",
-
-                  WebkitBackgroundClip:"text",
-
-                  WebkitTextFillColor:"transparent"
+                  color:"#ffffff"
                 }}
               >
 
                 Professional Websites
+
                 <br />
 
-                At ₹1999/- Only
+                <span
+                  style={{
+
+                    display:"inline-flex",
+
+                    alignItems:"center",
+
+                    gap:"8px",
+
+                    marginTop:"10px",
+
+                    padding:"6px 14px",
+
+                    borderRadius:"14px",
+
+                    background:
+                      "linear-gradient(135deg,#facc15,#f59e0b)",
+
+                    color:"#111827",
+
+                    fontSize:"clamp(18px,4vw,30px)",
+
+                    fontWeight:900,
+
+                    boxShadow:
+                      "0 0 25px rgba(251,191,36,.55)"
+                  }}
+                >
+
+                  ₹1999/-
+
+                </span>
+
+                <span
+                  style={{
+                    marginLeft:"8px",
+
+                    color:"rgba(255,255,255,.92)",
+
+                    fontSize:"clamp(16px,3vw,24px)",
+
+                    fontWeight:700
+                  }}
+                >
+
+                  Only
+
+                </span>
 
               </h2>
 

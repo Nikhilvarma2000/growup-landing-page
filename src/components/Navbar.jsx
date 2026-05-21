@@ -28,10 +28,13 @@ function Navbar() {
 
     <header
       className={`
+
         fixed
         top-0
         left-0
+
         w-full
+
         z-[999]
 
         transition-all
@@ -39,9 +42,12 @@ function Navbar() {
 
         ${
           scrolled
+
             ? "bg-white/80 backdrop-blur-2xl border-b border-black/[0.05] shadow-[0_10px_40px_rgba(0,0,0,0.05)]"
+
             : "bg-transparent"
         }
+
       `}
     >
 
@@ -49,11 +55,12 @@ function Navbar() {
 
       <div
         className="
+
           max-w-[1450px]
           mx-auto
 
-          h-[82px]
-          sm:h-[88px]
+          h-[78px]
+          sm:h-[86px]
 
           px-4
           sm:px-6
@@ -62,6 +69,7 @@ function Navbar() {
           flex
           items-center
           justify-between
+
         "
       >
 
@@ -71,6 +79,7 @@ function Navbar() {
           href="#home"
 
           className="
+
             flex
             items-center
 
@@ -78,6 +87,7 @@ function Navbar() {
             sm:gap-4
 
             min-w-0
+
           "
         >
 
@@ -85,10 +95,11 @@ function Navbar() {
 
           <div
             className="
+
               shrink-0
 
-              w-[48px]
-              h-[48px]
+              w-[46px]
+              h-[46px]
 
               sm:w-[56px]
               sm:h-[56px]
@@ -102,12 +113,17 @@ function Navbar() {
               from-violet-500
               to-indigo-600
 
-              shadow-[0_16px_35px_rgba(99,102,241,0.28)]
             "
+
+            style={{
+              boxShadow:
+                "0 16px 35px rgba(99,102,241,0.28)"
+            }}
           >
 
             <img
               src="/logo.png"
+
               alt="Growup Logo"
 
               className="
@@ -134,6 +150,7 @@ function Navbar() {
 
             <span
               className="
+
                 text-[1rem]
                 sm:text-[1.2rem]
 
@@ -142,6 +159,7 @@ function Navbar() {
                 text-gray-900
 
                 truncate
+
               "
 
               style={{
@@ -155,6 +173,7 @@ function Navbar() {
 
             <span
               className="
+
                 hidden
                 sm:block
 
@@ -169,6 +188,7 @@ function Navbar() {
                 tracking-[0.18em]
 
                 text-gray-500
+
               "
             >
 
@@ -180,12 +200,13 @@ function Navbar() {
 
         </a>
 
-        {/* RIGHT */}
+        {/* RIGHT BUTTON */}
 
         <a
-          href="#contact"
+          href="#footer"
 
           className="
+
             shrink-0
 
             flex
@@ -219,6 +240,8 @@ function Navbar() {
             duration-300
 
             hover:-translate-y-1
+            hover:scale-[1.02]
+
           "
 
           style={{
@@ -228,11 +251,15 @@ function Navbar() {
         >
 
           <span className="hidden xs:block">
-            Free Consultation
+
+            Contact Info
+
           </span>
 
           <span className="xs:hidden">
+
             Contact
+
           </span>
 
           <FaArrowRight
@@ -247,6 +274,7 @@ function Navbar() {
       </div>
 
     </header>
+
   )
 }
 
